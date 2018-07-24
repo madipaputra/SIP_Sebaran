@@ -44,6 +44,7 @@
                 </button>
               </div>');
               ?>
+              {pesan}
           <div class="card text-white p-5" style="background-color:white;">
             <div class="card-body">
               <b>

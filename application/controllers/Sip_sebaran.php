@@ -39,9 +39,10 @@ class Sip_sebaran extends CI_Controller {
 			{
 
 				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Halaman Login',
-								'webMuatHalaman'	=>	'Pages/login'
+				 'webJudul'			=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				 'webBagian'		=>	'Halaman Login',
+				 'webMuatHalaman'	=>	'Pages/login',
+				 'pesan'			=>	''
 				);
 
 		        $this->form_validation->set_rules('usernamePOST', 'Username',
@@ -60,6 +61,7 @@ class Sip_sebaran extends CI_Controller {
 	              //jika validasi login sudah tepat
 	              else
 	              {
+
 	              	//array data untuk terima inputan dari user
 					$data = array(
 					'username' => $this->input->post('usernamePOST'),
@@ -67,27 +69,26 @@ class Sip_sebaran extends CI_Controller {
 					);
 					$result = $this->akun->cekLogin($data);
 
-					// Logika jika $result yang didapatkan dari model akun!
-					// lihat bagian baris kode logika kueri (yang ada di dalam function cekLogin())
-					if ($result ==	TRUE)
-					{
-						//jika nilai $result true maka sistem wajib mendaftarkan session data
-						//variable sessionnya
-						$session_data = array(
-						'username'	=> $result[0]->username,
-						'kd_akun'	=> $result[0]->kd_akun
-						);
-						// perintah menambahkan session data
-						// userdata('data_login', $session_data) sama dengan 
-						// $data_login = array('username' => row_username, 'password' => row_password);
-						$this->session->set_userdata('data_login', $session_data);
-						$this->load->view('admin_page');
-					}
-					else
-					{
-						$data = array(
-						'error_message' => 'Invalid Username or Password'
-					}
+						// Logika jika $result yang didapatkan dari model akun!
+						// lihat bagian baris kode logika kueri (yang ada di dalam function cekLogin())
+						if ($result ==	TRUE)
+						{
+							//jika nilai $result true maka sistem wajib mendaftarkan session data
+							//variable sessionnya
+							$session_data = array(
+							'username'	=> $result[0]->username,
+							'kd_akun'	=> $result[0]->kd_akun
+							);
+							// perintah menambahkan session data
+							// userdata('data_login', $session_data) sama dengan 
+							// $data_login = array('username' => row_username, 'password' => row_password);
+							$this->session->set_userdata('data_login', $session_data);
+							$this->load->view('admin_page');
+						}
+						else
+						{
+
+						}
 
 	              }
 			}
@@ -101,7 +102,7 @@ class Sip_sebaran extends CI_Controller {
 		                'webJudul'        =>  'Sistem Informasi Pengajuan Sebaran Matakuliah',
 		                'webBagian'       =>  'Memroses Pendaftaran Akun...',
 		                'webMuatHalaman'  =>  'Pages/daftar',
-		                'sukses'          =>  ''
+		                'pesan'          =>  ''
 
 		        );
 

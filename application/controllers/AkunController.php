@@ -28,7 +28,7 @@ class AkunController extends CI_Controller
                 'webJudul'        =>  'Sistem Informasi Pengajuan Sebaran Matakuliah',
                 'webBagian'       =>  'Memroses Pendaftaran Akun...',
                 'webMuatHalaman'  =>  'Pages/daftar',
-                'sukses'          =>  ''
+                'pesan'          =>  ''
 
         );
 
@@ -54,7 +54,7 @@ class AkunController extends CI_Controller
               else
               {
                 $this->akun->insertAkun();
-                $element_header['sukses'] = '
+                $element_header['pesan'] = '
                   <div class="alert alert-success alert-dismissible fade show" role="alert">
                   Akun Berhasil Didaftarkan ke dalam database
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
