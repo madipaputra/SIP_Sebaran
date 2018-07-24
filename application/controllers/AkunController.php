@@ -14,6 +14,8 @@ class AkunController extends CI_Controller
   function __construct()
   {
     parent::__construct();
+    $this->load->database();
+    $this->load->model('akun');
   }
   
 
@@ -22,9 +24,11 @@ class AkunController extends CI_Controller
       {
         //Variabel untuk Template Parser
         $element_header = array(
+            //Halaman Dasar
                 'webJudul'        =>  'Sistem Informasi Pengajuan Sebaran Matakuliah',
                 'webBagian'       =>  'Memroses Pendaftaran Akun...',
-                'webMuatHalaman'  =>  'Pages/daftar'
+                'sukses'          =>  ''
+
         );
 
         $this->form_validation->set_rules('kd_akunPOST', 'Pilihan Prodi', 
@@ -48,8 +52,19 @@ class AkunController extends CI_Controller
               
               else
               {
+                $this->akun->insertAkun();
+                $element_header['sukses'] = '
+                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  Akun Berhasil Didaftarkan ke dalam database
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  ';
+
                 $this->parser->parse('Template/element_header', $element_header);
-                $this->load->view('Template/element_footer');              }
+                $this->load->view('Template/element_footer');              
+              }
       }
 
 }
