@@ -15,12 +15,15 @@
     <div class="container">
           <div>
             <?php               
+              //validasi gagal
               echo validation_errors('
               <div class="alert alert-warning alert-dismissible fade show" role="alert">', '
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-              </div>');?>
+              </div>');
+              ?>
+              {sukses}
           </div>
       <div class="row">
         <div class="col-md-7 text-md-left text-center align-self-center my-5">
@@ -79,8 +82,9 @@
                     <label class="text-dark">Password</label>
                     <input name="passwordPOST" type="password" class="form-control" placeholder="Masukkan Password"> </div>
                   <div align="center">
-                    <button type="submit" class="btn btn-secondary">Login</button>
-                    <button type="reset" class="btn btn-dark">Reset</button>&gt; </div>
+                    <button type="submit" class="btn btn-secondary">Daftar</button>
+                    <button type="reset" class="btn btn-dark">Reset</button>
+                    <a href="<?php echo base_url();?>" class="btn btn-success">Loginr</a> </div>
                 </div>
               <?php echo form_close(); ?>
             </div>
