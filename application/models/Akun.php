@@ -1,62 +1,36 @@
 <?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-Class Akun extends CI_Model {
+/**
+  Model Akun.
+  	
+  	- function registerProcess() adalah function yang menangani proses pendaftaran akun
 
-// Insert registration data in database
-public function registration_insert($data) {
+ */
+class Akun extends CI_Model
+{
+	
+	//Function Insert Data Pendaftaran Akun
+	public function insertAkun()
+	{
 
-// Query to check whether username already exist or not
-$condition = "user_name =" . "'" . $data['user_name'] . "'";
-$this->db->select('*');
-$this->db->from('user_login');
-$this->db->where($condition);
-$this->db->limit(1);
-$query = $this->db->get();
-if ($query->num_rows() == 0) {
+		//Kumpulan Variabel yang dipakai di script query builder 
+		$kd_akun	=	$this->input->post('kd_akunPOST');
+		$username	=	$this->input->post('usernamePOST');
+		$password	=	$this->input->post('passwordPOST');
+		$id_akun	=	$this->encrypt->encode($id_akun.$username);
 
-// Query to insert data in database
-$this->db->insert('user_login', $data);
-if ($this->db->affected_rows() > 0) {
-return true;
-}
-} else {
-return false;
-}
-}
+		//Kumpulan Array untuk Query Builder Proses Pendaftaran
+		$dataQuery = array(
+		        'id_akun'	=> $id_akun,
+		        'kd_akun'	=> $kd_akun,
+		        'username'	=> $username,
+		        'password'	=> $password
+		);
 
-// Read data using username and password
-public function login($data) {
-
-$condition = "user_name =" . "'" . $data['username'] . "' AND " . "user_password =" . "'" . $data['password'] . "'";
-$this->db->select('*');
-$this->db->from('user_login');
-$this->db->where($condition);
-$this->db->limit(1);
-$query = $this->db->get();
-
-if ($query->num_rows() == 1) {
-return true;
-} else {
-return false;
-}
-}
-
-// Read data from database to show data in admin page
-public function read_user_information($username) {
-
-$condition = "user_name =" . "'" . $username . "'";
-$this->db->select('*');
-$this->db->from('user_login');
-$this->db->where($condition);
-$this->db->limit(1);
-$query = $this->db->get();
-
-if ($query->num_rows() == 1) {
-return $query->result();
-} else {
-return false;
-}
-}
+		//Eksekusi Query Builder
+		return $this->db->insert('tb_akun', $dataQuery);
+	}
 
 }
 

@@ -1,14 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+/**
+  Controller SIP Sebaran Matakuliah Default.
+    
+    Ada beberapa function di Controller ini
+
+    - function 
+
+ */
 
 class Sip_sebaran extends CI_Controller {
 
-			public function index()
+	public function index(){}
+
+			//function yang menampilkan halaman login
+			public function loginPage()
 			{
-				/*
-					File Controller ini adalah bagian awal dari Sistem Informasi Pengajuan Sebaran Matakuliah
-					file ini memuat template dan memuat layout halaman login.
-				*/
+
 				$element_header = array(
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Halaman Login',
@@ -19,20 +27,18 @@ class Sip_sebaran extends CI_Controller {
 				$this->load->view('Template/element_footer');
 			}
 
-			public function akademikDashboard()
+			//function yang menampilkan halaman pendaftaran
+			public function registerPage()
 			{
-			  /*
-			    File Controller ini adalah bagian awal dari Sistem Informasi Pengajuan Sebaran Matakuliah
-			    file ini memuat template dan memuat layout halaman login.
-			  */
-			  $element_header = array(
-			          'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-			          'webBagian'				=>	'Halaman Dashboard Akademik',
-			          'webMuatHalaman'	=>	'Pages/Logged_in/akademik_dashboard'
-			  );
 
-			  $this->parser->parse('Template/element_header', $element_header);
-			  $this->load->view('Template/element_footer');
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pendaftaran Akun',
+								'webMuatHalaman'	=>	'Pages/daftar'
+				);
+
+				$this->parser->parse('Template/element_header', $element_header);
+				$this->load->view('Template/element_footer');
 			}
 
 }

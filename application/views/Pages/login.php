@@ -1,6 +1,6 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Sistem Informasi Pengajuan Matakuliah</a>
+      <a class="navbar-brand" href="<?php echo base_url();?>">Sistem Informasi Pengajuan Matakuliah</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -13,6 +13,26 @@
         <div class="col-md-7 text-md-left text-center align-self-center my-5">
           <h1 class="display-3 text-center">Selamat Datang&nbsp;</h1>
           <p class="lead text-justify text-capitalize text-light">Sistem Informasi Pengajuan Sebaran matakuliah merupakan sebuah sistem informasi yang dirancang khusus untuk digunakan oleh pihak akademik menangani proses yang berhubungan dengan sebaran matakuliah. &nbsp;</p>
+
+          <br>
+          <p>
+          <!--
+            <?php 
+
+              $textdemo       = "maulanapratama777";
+              $text_encoded   = $this->encrypt->encode($textdemo,'matsu48'); 
+              $text_decoded   = $this->encrypt->decode($text_encoded); 
+
+            ?>
+
+          Teks yang belum dienkripsi :  <?php echo $textdemo;?><br>
+
+   
+          Teks Yang sudah di enkripsi : <?php echo $text_encoded ?> dengan panjang karakter <?php echo strlen($text_encoded);?>
+          Teks Yang sudah di dekripsi : <?php echo $text_decoded ?>-->
+          
+
+          </p>
         </div>
         <div class="col-md-5">
           <div class="card text-white p-5 bg-secondary">
@@ -27,56 +47,11 @@
                   <input type="password" class="form-control" placeholder="Masukkan Password"> </div>
                 <div align="center">
                   <button type="submit" class="btn btn-dark">Login</button>
-                  <button type="button" class="btn btn-info" data-target="#panelPendaftaran" data-toggle="modal">Daftar</button>
+                  <a href="<?php echo base_url();?>Daftar" class="btn btn-info">Daftar</a>
                 </div>
               </form>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="panelPendaftaran">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="display-4" align="center" contenteditable="true">Pendaftaran Akun</h3>
-          <button type="button" class="close" data-dismiss="modal">
-            <span>×</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p class="lead text-justify">Silahkan Masukkan Form dibawah sesuai dengan label yang sudah ditentukan.
-            <br>Form Pendaftaran ini bisa diakses oleh pihak akademik ataupun pihak prodi untuk melakukan proses pendaftaran akun baru ke dalam sistem informasi ini.</p>
-          <form class="">
-            <div class="form-group">
-              <label>Nama Akun</label>
-              <input type="email" class="form-control" placeholder="Masukkan Nama Akun">
-              <small class="form-text text-muted"></small>
-            </div>
-            <div class="form-group">
-              <label>Username</label>
-              <input type="email" class="form-control" placeholder="Masukkan Username">
-              <small class="form-text text-muted"></small>
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input type="email" class="form-control" placeholder="Masukkan Password">
-              <small class="form-text text-muted"></small>
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <select class="form-control">
-                <option>Silahkan Pilih</option>
-                <option>Akademik</option>
-                <option>Prodi</option>
-              </select>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success">Daftar</button>
-          <button type="button" class="btn btn-dark" data-dismiss="modal" >Close</button>
         </div>
       </div>
     </div>

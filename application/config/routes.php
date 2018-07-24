@@ -49,10 +49,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'sip_sebaran';
-$route['AKDashboard'] = 'sip_sebaran/akademikDashboard';
-  //$route['AKDashboard/listDemo'] = 'sip_sebaran/listDemo';
 
-$route['PDDashboard'] = 'sip_sebaran/prodiDashboard';
+//Default Controller. Controller Utama
+$route['default_controller']	= 'sip_sebaran/loginPage';
+
+	//Routing URL Pendaftaran
+	$route['Daftar'] 								= 'sip_sebaran/registerPage';
+		$route['Daftar/prosesDaftar'] 				= 'AkunController/doRsegister'; //Proses Pendaftaran
+
+
+
+	//$route['AKDashboard'] = 'sip_sebaran/akademikDashboard';
+  	//$route['AKDashboard/listDemo'] = 'sip_sebaran/listDemo';
+	//$route['PDDashboard'] = 'sip_sebaran/prodiDashboard';
+		
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
