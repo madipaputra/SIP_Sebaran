@@ -18,18 +18,17 @@ class Akun extends CI_Model
 		$kd_akun	=	$this->input->post('kd_akunPOST');
 		$username	=	$this->input->post('usernamePOST');
 		$password	=	$this->input->post('passwordPOST');
-		$id_akun	=	$this->encrypt->encode($id_akun.$username);
+		$id_akun	=	hash('crc32', $kd_akun.$username);
 
-		//Kumpulan Array untuk Query Builder Proses Pendaftaran
-		$dataQuery = array(
-		        'id_akun'	=> $id_akun,
+			//Array data row yang ada di dalam tabel
+			$data = array(
+		    	'id_akun'	=> $id_akun,
 		        'kd_akun'	=> $kd_akun,
 		        'username'	=> $username,
-		        'password'	=> $password
-		);
+		        'password'	=> $this->encrypt->encode($password,'SIPMKTEDC')
+			);
 
-		//Eksekusi Query Builder
-		return $this->db->insert('tb_akun', $dataQuery);
+		$this->db->insert('tb_akun', $data);
 	}
 
 }
