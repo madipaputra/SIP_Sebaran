@@ -61,46 +61,31 @@ class Sip_sebaran extends CI_Controller {
 	              //jika validasi login sudah tepat
 	              else
 	              {
-
-	              	//array data untuk terima inputan dari user
-					$data = array(
-					'username' => $this->input->post('usernamePOST'),
-					'password' => $this->input->post('passwordPOST')
+	            	//get the posted values
+					$dataQuery = array
+					(
+						'username' => $this->input->post('usernamePOST'), 
+						'password' => $this->input->post("passwordPOST")
 					);
-					$result = $this->akun->cekLogin($data);
 
-						// Logika jika $result yang didapatkan dari model akun!
-						// lihat bagian baris kode logika kueri (yang ada di dalam function cekLogin())
-						if ($result ==	TRUE)
-						{
-							//jika nilai $result true maka sistem wajib mendaftarkan session data
-							//variable sessionnya
-							$session_data = array(
-							'username'	=> $result[0]->username,
-							'kd_akun'	=> $result[0]->kd_akun
-							);
-							// perintah menambahkan session data
-							// userdata('data_login', $session_data) sama dengan 
-							// $data_login = array('username' => row_username, 'password' => row_password);
-							$this->session->set_userdata('data_login', $session_data);
-							$this->load->view('admin_page');
-						}
-						else
-						{
-			                $element_header['pesan'] = '
-			                <br>
-			                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-			                  Anda Memasukkan Informasi Akun yang salah! Silahkan Masukkan Username dan Password lagi!
-			                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			                      <span aria-hidden="true">&times;</span>
-			                    </button>
-			                  </div>
-			                  ';
-			                $this->parser->parse('Template/element_header', $element_header);
-	                		$this->load->view('Template/element_footer');
-						}
+					//check if username and password is correct
+					$akunResult = $this->akun->cekLogin($dataQuery);
+					if ($akunResult > 0) //active user record is present
+					{
+						//set the session variables
+						//$sessiondata = array(
+						//	'username' => $username,
+						//	'loginuser' => TRUE,
+						//);
+						// Login ok redireciona
+						//$this->session->set_userdata($sessiondata);
+						//redirect('login/pg_inicio');
+						echo "Login Benar";
+					} else {
+						echo "Login Salah ";
+				}
+					}	
 
-	              }
 			}
 
 			//function yang menampilkan halaman pendaftaran
