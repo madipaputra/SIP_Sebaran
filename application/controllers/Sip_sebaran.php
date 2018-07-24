@@ -30,12 +30,15 @@ class Sip_sebaran extends CI_Controller {
 			//function yang menampilkan halaman pendaftaran
 			public function registerPage()
 			{
+		        //Variabel untuk Template Parser
+		        $element_header = array(
+		            //Halaman Dasar
+		                'webJudul'        =>  'Sistem Informasi Pengajuan Sebaran Matakuliah',
+		                'webBagian'       =>  'Memroses Pendaftaran Akun...',
+		                'webMuatHalaman'  =>  'Pages/daftar',
+		                'sukses'          =>  ''
 
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Halaman Pendaftaran Akun',
-								'webMuatHalaman'	=>	'Pages/daftar'
-				);
+		        );
 
 				$this->parser->parse('Template/element_header', $element_header);
 				$this->load->view('Template/element_footer');
