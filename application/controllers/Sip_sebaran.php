@@ -27,18 +27,6 @@ class Sip_sebaran extends CI_Controller {
 				$this->load->view('Template/element_footer');
 			}
 
-			//function yang menampilkan halaman pendaftaran
-			public function registerPage()
-			{
 
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Halaman Pendaftaran Akun',
-								'webMuatHalaman'	=>	'Pages/daftar'
-				);
-
-				$this->parser->parse('Template/element_header', $element_header);
-				$this->load->view('Template/element_footer');
-			}
 
 }
