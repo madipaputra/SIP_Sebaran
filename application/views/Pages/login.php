@@ -34,22 +34,27 @@
 
           </p>
         </div>
-        <div class="col-md-5">
-          <div class="card text-white p-5 bg-secondary">
+        <div class="col-md-5" style="background-color:white;">
+          <div class="card text-white p-5" style="background-color:white;">
             <div class="card-body">
-              <h1 class="mb-4 text-center text-light">Login form</h1>
-              <form action="https://formspree.io/YOUREMAILHERE">
+              <b>
+                <h1 class="mb-4 text-center text-dark">Login form</h1>
+              </b>
+              <?php 
+              echo form_open('Daftar/prosesDaftar');?>
                 <div class="form-group">
-                  <label>Username</label>
-                  <input type="email" class="form-control" placeholder="Masukkan Username"> </div>
-                <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" class="form-control" placeholder="Masukkan Password"> </div>
-                <div align="center">
-                  <button type="submit" class="btn btn-dark">Login</button>
-                  <a href="<?php echo base_url();?>Daftar" class="btn btn-info">Daftar</a>
+
+                  <div class="form-group">
+                    <label class="text-dark">Username</label>
+                    <input name="usernamePOST" type="text" class="form-control" placeholder="Masukkan Username"> </div>
+                  <div class="form-group">
+                    <label class="text-dark">Password</label>
+                    <input name="passwordPOST" type="password" class="form-control" placeholder="Masukkan Password"> </div>
+                  <div align="center">
+                    <button type="submit" class="btn btn-secondary">Login</button>
+                    <a class="btn btn-dark" href="<?php echo base_url();?>Daftar">Daftar</a></div>
                 </div>
-              </form>
+              <?php echo form_close(); ?>
             </div>
           </div>
         </div>
