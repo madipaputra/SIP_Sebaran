@@ -87,7 +87,17 @@ class Sip_sebaran extends CI_Controller {
 						}
 						else
 						{
-
+			                $element_header['pesan'] = '
+			                <br>
+			                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+			                  Anda Memasukkan Informasi Akun yang salah! Silahkan Masukkan Username dan Password lagi!
+			                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			                      <span aria-hidden="true">&times;</span>
+			                    </button>
+			                  </div>
+			                  ';
+			                $this->parser->parse('Template/element_header', $element_header);
+	                		$this->load->view('Template/element_footer');
 						}
 
 	              }
