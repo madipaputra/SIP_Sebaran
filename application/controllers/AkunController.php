@@ -27,6 +27,7 @@ class AkunController extends CI_Controller
             //Halaman Dasar
                 'webJudul'        =>  'Sistem Informasi Pengajuan Sebaran Matakuliah',
                 'webBagian'       =>  'Memroses Pendaftaran Akun...',
+                'webMuatHalaman'  =>  'Pages/daftar',
                 'sukses'          =>  ''
 
         );

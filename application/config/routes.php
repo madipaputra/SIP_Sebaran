@@ -51,11 +51,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 //Default Controller. Controller Utama
-$route['default_controller']	= 'sip_sebaran/loginPage';
+$route['default_controller']	=	'sip_sebaran/loginPage';
+$route['Login/prosesLogin']		=	'sip_sebaran/doLogin';
 
 	//Routing URL Pendaftaran
 	$route['Daftar'] 								= 'sip_sebaran/registerPage';
-		$route['Daftar/prosesDaftar'] 				= 'AkunController/doRsegister'; //Proses Pendaftaran
+	$route['Daftar/prosesDaftar'] 				= 'AkunController/doRsegister'; 
+	//Proses Pendaftaran
 
 
 

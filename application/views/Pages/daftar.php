@@ -14,16 +14,6 @@
   <div class="py-5 text-white bg-secondary" >
     <div class="container">
           <div>
-            <?php               
-              //validasi gagal
-              echo validation_errors('
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">', '
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>');
-              ?>
-              {sukses}
           </div>
       <div class="row">
         <div class="col-md-7 text-md-left text-center align-self-center my-5">
@@ -46,6 +36,16 @@
           </p>
         </div>
         <div class="col-md-5" style="background-color:white;">
+            <?php               
+              //validasi gagal
+              echo validation_errors('
+              <br><div class="alert alert-warning alert-dismissible fade show" role="alert">', '
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>');
+              ?>
+              {sukses}
           <div class="card text-white p-5" style="background-color:white;">
             <div class="card-body">
               <b>

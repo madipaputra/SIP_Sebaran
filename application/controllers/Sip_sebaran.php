@@ -27,6 +27,36 @@ class Sip_sebaran extends CI_Controller {
 				$this->load->view('Template/element_footer');
 			}
 
+			//function yang menampilkan halaman login
+			public function doLogin()
+			{
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Login',
+								'webMuatHalaman'	=>	'Pages/login'
+				);
+
+		        $this->form_validation->set_rules('usernamePOST', 'Username',
+		          'required', array('required' => 'Username Harus Diisi')
+		        );
+		        $this->form_validation->set_rules('passwordPOST', 'Password', 
+		          'required', array('required' => 'Password Harus Diisi'));
+
+	            //Logika Form Validation
+	              if ($this->form_validation->run() == FALSE)
+	              {
+	                $this->parser->parse('Template/element_header', $element_header);
+	                $this->load->view('Template/element_footer');
+	              }
+	              
+	              else
+	              {
+	                $this->parser->parse('Template/element_header', $element_header);
+	                $this->load->view('Template/element_footer');              
+	              }
+			}
+
 			//function yang menampilkan halaman pendaftaran
 			public function registerPage()
 			{
