@@ -54,8 +54,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller']	=	'sip_sebaran/loginPage';
 $route['Login/prosesLogin']		=	'sip_sebaran/doLogin';
 
+$route['dashboard']	=	'PageDashBoard/DashBoardPage';
+
 	//Routing URL Pendaftaran
-	$route['Daftar'] 								= 'sip_sebaran/registerPage';
+	$route['Daftar'] 							= 'sip_sebaran/registerPage';
 	$route['Daftar/prosesDaftar'] 				= 'AkunController/doRsegister'; 
 	//Proses Pendaftaran
 

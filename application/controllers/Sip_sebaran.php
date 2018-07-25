@@ -110,7 +110,7 @@ class Sip_sebaran extends CI_Controller {
 
 				                // $this->parser->parse('Template/element_header', $element_header);
 				                // $this->load->view('Template/element_footer'); 
-
+								redirect(base_url().'dashboard');
 				      		}
 				      	else
 				      		{
