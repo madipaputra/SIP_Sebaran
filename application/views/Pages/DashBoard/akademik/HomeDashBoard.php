@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Prodi</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageProdi"">Prodi</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Dosen</a>
@@ -72,15 +72,6 @@
               <a href="#" class="btn btn-dark">Lebih Detail</a>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="bg-dark text-white">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 mt-3">
-          <p class="text-center text-white">© Copyright 2017 Pingendo - All rights reserved. </p>
         </div>
       </div>
     </div>
