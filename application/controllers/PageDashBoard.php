@@ -26,52 +26,186 @@ class PageDashBoard extends CI_Controller
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
 				$this->load->view('Template/Dashboard/element_footer');
+			        break;
 
-			        break;
 			    case "AK":
-			        echo "Akuntansi";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Akuntansi',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "KA":
-			        echo "Komputerisasi Akuntansi";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Komputerisasi Akuntansi',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "KB":
-			        echo "Konstruksi Bangunan";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Konstruksi Bangunan',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "MID":
-			        echo "Mekatronik Industri dan Desain";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "MK":
-			        echo "Mekatronik Industri dan Desain / Mekatronik";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain / Mekatronik',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "AB":
-			        echo "MO / Alat Berat";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'MO / Alat Berat',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "MO":
-			        echo "MO / Mekanik Otomotif";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'MO / Mekanik Otomotif',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "RM":
-			        echo "Rekam Medik dan Informasi Kesehatan";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Rekam Medik & Informasi Kesehatan',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "ALL":
-			        echo "Seluruh Prodi";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Seluruh Prodi',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "TE":
-			        echo "Teknik Elektronika";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Teknik Elektronika',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "IF":
-			        echo "Teknik Informatika";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Teknik Informatika',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "KIM":
-			        echo "Teknik Kimia";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Teknik Kimia',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "TK":
-			        echo "Teknik Komputer";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Teknik Komputer',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "TM":
-			        echo "Teknik Mesin";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Teknik Mesin',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
+
 			    case "TO":
-			        echo "Teknik Otomasi";
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Dashboard Prodi',
+				        'inisialisasiKodeAkun'	=>	'Teknik Otomasi',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+				);
+
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
 			        break;
 			}
 
