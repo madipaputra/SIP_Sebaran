@@ -28,7 +28,8 @@
             <?php               
               //validasi gagal
               echo validation_errors('
-              <br><div class="alert alert-warning alert-dismissible fade show" role="alert">', '
+              <br><div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <i class="fas fa-exclamation-triangle"></i> ', '
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -51,8 +52,10 @@
                     <label class="text-dark">Password</label>
                     <input name="passwordPOST" type="password" class="form-control" placeholder="Masukkan Password"> </div>
                   <div align="center">
-                    <button type="submit" class="btn btn-secondary">Login</button>
-                    <a class="btn btn-dark" href="<?php echo base_url();?>Daftar">Daftar</a></div>
+                    <button type="submit" class="btn btn-secondary">
+                    <i class="fas fa-sign-in-alt"></i> Login</button>
+                    <a class="btn btn-dark" href="<?php echo base_url();?>Daftar">
+                    <i class="fas fa-user-plus"></i> Daftar</a></div>
                 </div>
               <?php echo form_close(); ?>
             </div>
