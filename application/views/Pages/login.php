@@ -12,24 +12,14 @@
       <div class="row">
         <div class="col-md-7 text-md-left text-center align-self-center my-5">
           <h1 class="display-3 text-center">Selamat Datang&nbsp;</h1>
-          <p class="lead text-justify text-capitalize text-light">Sistem Informasi Pengajuan Sebaran matakuliah merupakan sebuah sistem informasi yang dirancang khusus untuk digunakan oleh pihak akademik menangani proses yang berhubungan dengan sebaran matakuliah. &nbsp;</p>
+          <p class="lead text-justify text-capitalize text-light">Sistem Informasi Pengajuan Sebaran matakuliah merupakan sebuah sistem informasi yang dirancang khusus untuk digunakan oleh pihak akademik menangani proses yang berhubungan dengan sebaran matakuliah. &nbsp;<br>
+            <br>
+          abcd</p>
+                
 
           <br>
           <p>
-          <!--
-            <?php 
 
-              $textdemo       = "maulanapratama777";
-              $text_encoded   = $this->encrypt->encode($textdemo,'matsu48'); 
-              $text_decoded   = $this->encrypt->decode($text_encoded); 
-
-            ?>
-
-          Teks yang belum dienkripsi :  <?php echo $textdemo;?><br>
-
-   
-          Teks Yang sudah di enkripsi : <?php echo $text_encoded ?> dengan panjang karakter <?php echo strlen($text_encoded);?>
-          Teks Yang sudah di dekripsi : <?php echo $text_decoded ?>-->
           
 
           </p>

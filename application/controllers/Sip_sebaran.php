@@ -14,7 +14,6 @@ class Sip_sebaran extends CI_Controller {
 	function __construct()
 	{
 	    parent::__construct();
-	    $this->load->database();
 		$this->load->model('akun');
 	}
 
@@ -53,37 +52,43 @@ class Sip_sebaran extends CI_Controller {
 
 	            //Logika Form Validation
 	              if ($this->form_validation->run() == FALSE)
-	              {
-	                $this->parser->parse('Template/element_header', $element_header);
-	                $this->load->view('Template/element_footer');
-	              }
+	              	{
+	                	$this->parser->parse('Template/element_header', $element_header);
+	                	$this->load->view('Template/element_footer');
+	              	}
 	              
 	              //jika validasi login sudah tepat
 	              else
-	              {
-	            	//get the posted values
-					$dataQuery = array
-					(
-						'username' => $this->input->post('usernamePOST'), 
-						'password' => $this->input->post("passwordPOST")
-					);
+	              	{
+	              	//Proses Eksekusi inputan Login
+				      $username = $this->input->post('usernamePOST');
+				      $password = $this->input->post('passwordPOST');
+				      $eksekusiLogin = $this->akun->loginAkun($username,$password);
+				      	
+				      	//echo $eksekusiLogin;
+				      	// jika $eksekusiLogin == 1 dianggap berhasil login dan == 0 dianggap ggl login 
+				      	if ($eksekusiLogin	==	1) 
+				      		{
+				      			//Array untuk proses penambahan session
+								$sessionData = array(
+								        'username'  => $username,
+								        'sudah_login' => 1
+								);
+								//perintah menambahkan nilai pada setiap session
+								$this->session->set_userdata($sessionData);
+								//debug testing pengecekan session
+								echo $this->session->username;
+								echo $this->session->sudah_login;
+								echo "Login Benar";
+								//perintah unset session
+								$unsessionData	=   array('username', 'sudah_login' );
+								$this->session->unset_userdata($sessionData);
+				      		}
+				      	else
+				      		{
+				      			echo " Salah";
+				      		}
 
-					//check if username and password is correct
-					$akunResult = $this->akun->cekLogin($dataQuery);
-					if ($akunResult > 0) //active user record is present
-					{
-						//set the session variables
-						//$sessiondata = array(
-						//	'username' => $username,
-						//	'loginuser' => TRUE,
-						//);
-						// Login ok redireciona
-						//$this->session->set_userdata($sessiondata);
-						//redirect('login/pg_inicio');
-						echo "Login Benar";
-					} else {
-						echo "Login Salah ";
-				}
 					}	
 
 			}

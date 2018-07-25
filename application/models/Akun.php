@@ -25,26 +25,28 @@ class Akun extends CI_Model
 		    	'id_akun'	=> $id_akun,
 		        'kd_akun'	=> $kd_akun,
 		        'username'	=> $username,
-		        'password'	=> $this->encrypt->encode($password)
+		        'password'	=> hash('sha512', $password)
 			);
 
 		$this->db->insert('tb_akun', $data);
 	}
 
-	//Function cekLogin
-	public function cekLogin($dataQuery)
+	public function loginAkun($username, $password)
 	{
-		$username 	= $dataQuery['username'];
-		$password 	= $this->encrypt->encode($dataQuery['password']);
+	  $periksa = $this->db->get_where('tb_akun', 
+	  	array('username'=>$username,'password'=> hash('sha512',$password)));
 
-		$query = $this->db->query("
-			SELECT * FROM `tb_akun`  WHERE 
-			username='$username' AND 
-			password='$password'");
-		return $query->num_rows();
-
+		  if($periksa->num_rows()>0)
+		  	{
+		    	return 1;
+		  	}
+		  else
+		  	{
+		    	return 0;
+		  	}
 	}
-
+	
 }
+
 
 ?>
