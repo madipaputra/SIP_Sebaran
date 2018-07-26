@@ -139,7 +139,7 @@ class Sip_sebaran extends CI_Controller {
 		        $element_header = array(
 		            //Halaman Dasar
 		                'webJudul'        =>  'Sistem Informasi Pengajuan Sebaran Matakuliah',
-		                'webBagian'       =>  'Memroses Pendaftaran Akun...',
+		                'webBagian'       =>  'Halaman Pendaftaran',
 		                'webMuatHalaman'  =>  'Pages/daftar',
 		                'pesan'          =>  ''
 

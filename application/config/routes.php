@@ -58,7 +58,11 @@ $route['Login/prosesLogin']		=	'sip_sebaran/doLogin';
 $route['dashboard']	=	'PageDashBoard/DashBoardPage';
 
 	// Controller Manage Data (Prodi)
-		$route['dashboard/prodi/manageProdi']	=	'PageDashBoard/prodiManageProdiPage';
+		$route['dashboard/prodi/manageProdi']	=	'PageDashBoard/ManageProdiPage';
+
+	// Controller Manage Data (Akademik)
+		$route['dashboard/akademik/manageProdi']		=	'PageDashBoard/ManageProdiPage';
+		$route['dashboard/akademik/manageProdi/Add']	=	'PageDashBoard/ManageProdiAdd';
 
 	//Routing URL Pendaftaran
 	$route['Daftar'] 							= 'sip_sebaran/registerPage';

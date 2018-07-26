@@ -45,8 +45,9 @@
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>');
+              echo $pesan;
               ?>
-              {pesan}
+              
           <div class="card text-white p-5" style="background-color:white;">
             <div class="card-body">
               <b>

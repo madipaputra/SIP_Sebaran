@@ -54,16 +54,16 @@ class AkunController extends CI_Controller
               {
                 $this->akun->insertAkun();
                 $element_header['pesan'] = '
+                  <br>
                   <div class="alert alert-success alert-dismissible fade show" role="alert">
-                  Akun Berhasil Didaftarkan ke dalam database
+                  <i class="fas fa-check-circle"></i> Akun Berhasil Ditambahkan ke dalam database
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   ';
-
                 $this->parser->parse('Template/element_header', $element_header);
-                $this->load->view('Template/element_footer');              
+                $this->load->view('Template/element_footer');
               }
       }
 

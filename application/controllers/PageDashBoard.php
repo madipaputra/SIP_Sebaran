@@ -7,6 +7,7 @@ class PageDashBoard extends CI_Controller
 		function __construct()
 			{
 				parent::__construct();
+				$this->load->model('ProdiModel');
 			}
 
 		public function DashBoardPage()
@@ -22,6 +23,7 @@ class PageDashBoard extends CI_Controller
 				        'webBagian'				=>	'Dashboard',
 				        'inisialisasiKodeAkun'	=>	'Akademik',
 						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/HomeDashBoard'
+
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -211,7 +213,7 @@ class PageDashBoard extends CI_Controller
 
 		}
 
-		public function prodiManageProdiPage()
+		public function ManageProdiPage()
 		{
 			switch ($this->session->kd_akun) {
 			    case "AKA":
@@ -219,7 +221,13 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Manage Prodi',
 				        'inisialisasiKodeAkun'	=>	'(Akademik)',
-						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageProdi'
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageProdi',
+						'pesan'					=>	'<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  Percobaan Menampilkan Pesan
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>'
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -406,5 +414,59 @@ class PageDashBoard extends CI_Controller
 				$this->load->view('Template/Dashboard/element_footer');
 			        break;
 			}
+		}
+
+		public function ManageProdiAdd()
+		{
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Prodi (Add)',
+				        'inisialisasiKodeAkun'	=>	'(Akademik)',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageProdi',
+						'pesan'					=>	'<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  Percobaan Menampilkan Pesan
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>'
+				);
+
+
+		        $this->form_validation->set_rules('kd_prodiPOST', 'Kode Prodi', 
+		          'required', array('required' => 'Kode Prodi Harus Diisi')
+		        );
+
+		        $this->form_validation->set_rules('nama_prodiPOST', 'Nama Prodi',
+		          'required', array('required' => 'Nama Prodi Harus Diisi')
+		        );
+
+	            //Logika Form Validation
+	              if ($this->form_validation->run() == FALSE)
+	              {
+	                $this->parser->parse('Template/element_header', $element_header);
+	                $this->load->view('Template/element_footer');
+	              }
+
+	              else
+	              {
+	                $this->ProdiModel->insertProdi();
+	                $element_header['pesan'] = '
+	                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+	                  Data Prodi Berhasil Ditambahkan ke dalam Database
+	                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                      <span aria-hidden="true">&times;</span>
+	                    </button>
+	                  </div>
+	                  ';
+
+	                $this->parser->parse('Template/element_header', $element_header);
+	                $this->load->view('Template/element_footer');              
+	              }
+
+		}
+
+		public function ManageProdiEdit()
+		{
+
 		}
 }

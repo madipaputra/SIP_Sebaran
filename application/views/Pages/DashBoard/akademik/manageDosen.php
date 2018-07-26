@@ -30,46 +30,52 @@
       </div>
     </div>
   </nav>
-  <div class="p-5 bg-secondary" >
+  <div class="p-5 bg-secondary">
     <div class="container">
       <div class="row">
-        <div class="p-3 align-self-center col-md-3">
+        <div class="p-3 align-self-center col-md-12">
           <div class="card">
-            <div class="card-block p-5">
-              <h1 class="text-center">15 </h1>
-              <h3 class="text-center">Prodi</h3>
+            <h1 class="display-3 text-center" contenteditable="true" >Manage Dosen</h1>
+            <div class="card-block p-3">
               <hr>
-              <a href="#" class="btn btn-dark">Lebih Detail</a>
-            </div>
-          </div>
-        </div>
-        <div class="p-3 align-self-center col-md-3">
-          <div class="card">
-            <div class="card-block p-5">
-              <h1 class="text-center">75 </h1>
-              <h3 class="text-center">Dosen</h3>
+              <a href="#" class="btn btn-dark">Tambah</a>
+              <a href="#" class="btn btn-dark">Export Ke PDF</a>
               <hr>
-              <a href="#" class="btn btn-dark">Lebih Detail</a>
-            </div>
-          </div>
-        </div>
-        <div class="p-3 align-self-center col-md-3">
-          <div class="card">
-            <div class="card-block p-5">
-              <h1>1500</h1>
-              <h3>Matkul</h3>
-              <hr>
-              <a href="#" class="btn btn-dark">Lebih Detail</a>
-            </div>
-          </div>
-        </div>
-        <div class="p-3 align-self-center col-md-3">
-          <div class="card">
-            <div class="card-block p-5">
-              <h1 class="text-center">75 </h1>
-              <h3 class="text-center">Kelas</h3>
-              <hr>
-              <a href="#" class="btn btn-dark">Lebih Detail</a>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian">
+                <select class="form-control">
+                  <option>Filter Pencarian Berdasarkan</option>
+                </select>
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button">Cari</button>
+                </div>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Kode Prodi</th>
+                    <th>Nama Prodi</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

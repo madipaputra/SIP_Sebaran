@@ -10,13 +10,13 @@
             <a class="nav-link" href="<?php echo base_url();?>dashboard/prodi/manageProdi">Prodi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Dosen</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/prodi/manageDosen">Dosen</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Matakuliah</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/prodi/manageMatkul">Matakuliah</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Kelas</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/prodi/manageKelas">Kelas</a>
           </li>
         </ul>
         <form class="form-inline m-0">
