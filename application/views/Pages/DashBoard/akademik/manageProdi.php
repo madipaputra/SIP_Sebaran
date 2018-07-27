@@ -131,13 +131,14 @@
 
       <div class="modal-body">
                       <div class="form-group">
+                        <input name="idProdiPOST" type="hidden" value="'.$row['id_prodi'].'" />
                         <label>Kode Prodi</label>
-                        <input type="text" class="form-control form-control-sm" name="kd_prodiPOST" value="'.$row['kd_prodi'].'">
+                        <input name="kdProdiPOST" type="text" class="form-control form-control-sm" name="kd_prodiPOST" value="'.$row['kd_prodi'].'">
                         <small class="form-text text-muted">Masukkan 3 digit huruf inisial Program Studi</small>
                       </div>
                       <div class="form-group">
                         <label>Nama Prodi</label>
-                        <input type="text" class="form-control form-control-sm" value="'.$row['nama_prodi'].' name="nama_prodiPOST"> </div>
+                        <input type="text" class="form-control form-control-sm" value="'.$row['nama_prodi'].' name="namaProdiPOST"> </div>
 
                     
       </div>
@@ -156,6 +157,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <form action="'.base_url().'dashboard/akademik/manageProdi/Delete" method="post">
+        <input name="idPOST" type="hidden" value="'.$row['id_prodi'].'" />
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle"><b>Hapus data prodi '.$row['nama_prodi'].'</b></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -169,7 +171,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-info" data-dismiss="modal">Batal</button>
-        <button type="submit" class="btn btn-success"><i class="fas fa-trash-alt"></i> Hapus</button>
+        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Hapus</button>
       </div>
       </form>
     </div>

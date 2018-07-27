@@ -1,8 +1,8 @@
 ###################
-Sistem Informsi Pengajuan Sebaran Matakuliah
+Sistem Informasi Pengajuan Sebaran Matakuliah
 ###################
 
-Sistem Informsi Pengajuan Sebaran Matakuliah (SIP MK) merupakan Sistem Informasi yang dirancang khusus untuk menerapkan kegiatan proses pengajuan matakuliah pada kampus.
+Sistem Informsi Pengajuan Sebaran Matakuliah (SIP MK) merupakan Sistem Informasi yang dirancang khusus untuk menerapkan kegiatan proses pengajuan matakuliah di kampus.
 
 Sistem Informasi ini di dibangun dengan menggunakan PHP Framework CodeIgniter versi 3.1.9.
 
