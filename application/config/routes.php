@@ -61,8 +61,12 @@ $route['dashboard']	=	'PageDashBoard/DashBoardPage';
 		$route['dashboard/prodi/manageProdi']	=	'PageDashBoard/ManageProdiPage';
 
 	// Controller Manage Data (Akademik)
+		//Manage Prodi
 		$route['dashboard/akademik/manageProdi']		=	'PageDashBoard/ManageProdiPage';
 		$route['dashboard/akademik/manageProdi/Add']	=	'PageDashBoard/ManageProdiAdd';
+		$route['dashboard/akademik/manageProdi/Search']	=	'PageDashBoard/ManageProdiSearch';
+		$route['dashboard/akademik/manageProdi/Delete']	=	'PageDashBoard/ManageProdiDelete';
+		$route['dashboard/akademik/manageProdi/Edit']	=	'PageDashBoard/ManageProdiEdit';
 
 	//Routing URL Pendaftaran
 	$route['Daftar'] 							= 'sip_sebaran/registerPage';

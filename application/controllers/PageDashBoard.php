@@ -10,6 +10,11 @@ class PageDashBoard extends CI_Controller
 				$this->load->model('ProdiModel');
 			}
 
+		function parserTemplate($element_header){
+				$this->parser->parse('Template/Dashboard/element_header', $element_header);
+				$this->load->view('Template/Dashboard/element_footer');
+		}
+
 		public function DashBoardPage()
 		{
 			//echo $this->session->username;
@@ -222,16 +227,9 @@ class PageDashBoard extends CI_Controller
 				        'webBagian'				=>	'Manage Prodi',
 				        'inisialisasiKodeAkun'	=>	'(Akademik)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageProdi',
-						'pesan'					=>	'<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                  Percobaan Menampilkan Pesan
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>'
+						'pesan'					=>	''
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "AK":
@@ -241,9 +239,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Akuntansi)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "KA":
@@ -253,9 +249,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Komputerisasi Akuntansi)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "KB":
@@ -265,9 +259,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Konstruksi Bangunan)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "MID":
@@ -277,9 +269,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Mekatronik Industri & Desain)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "MK":
@@ -289,9 +279,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Mekatronik Industri & Desain / Mekatronik)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "AB":
@@ -301,9 +289,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(MO / Alat Berat)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "MO":
@@ -313,9 +299,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(MO / Mekanik Otomotif)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "RM":
@@ -325,9 +309,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Rekam Medik & Informasi Kesehatan)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "ALL":
@@ -337,9 +319,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Seluruh Prodi)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "TE":
@@ -349,9 +329,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Teknik Elektronika)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "IF":
@@ -361,9 +339,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Teknik Informatika)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+			    $this->parserTemplate($element_header);
 			        break;
 
 			    case "KIM":
@@ -373,9 +349,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Teknik Kimia)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "TK":
@@ -385,9 +359,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Teknik Komputer)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "TM":
@@ -397,9 +369,7 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Teknik Mesin)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
 
 			    case "TO":
@@ -409,10 +379,9 @@ class PageDashBoard extends CI_Controller
 				        'inisialisasiKodeAkun'	=>	'(Teknik Otomasi)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
 				);
-
-				$this->parser->parse('Template/Dashboard/element_header', $element_header);
-				$this->load->view('Template/Dashboard/element_footer');
+				$this->parserTemplate($element_header);
 			        break;
+
 			}
 		}
 
@@ -423,12 +392,7 @@ class PageDashBoard extends CI_Controller
 				        'webBagian'				=>	'Manage Prodi (Add)',
 				        'inisialisasiKodeAkun'	=>	'(Akademik)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageProdi',
-						'pesan'					=>	'<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                  Percobaan Menampilkan Pesan
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>'
+						'pesan'					=>	''
 				);
 
 
@@ -443,8 +407,8 @@ class PageDashBoard extends CI_Controller
 	            //Logika Form Validation
 	              if ($this->form_validation->run() == FALSE)
 	              {
-	                $this->parser->parse('Template/element_header', $element_header);
-	                $this->load->view('Template/element_footer');
+	                $this->parser->parse('Template/Dashboard/element_header', $element_header);
+	                $this->load->view('Template/Dashboard/element_footer');
 	              }
 
 	              else
@@ -459,14 +423,104 @@ class PageDashBoard extends CI_Controller
 	                  </div>
 	                  ';
 
-	                $this->parser->parse('Template/element_header', $element_header);
-	                $this->load->view('Template/element_footer');              
+	                $this->parser->parse('Template/Dashboard/element_header', $element_header);
+	                $this->load->view('Template/Dashboard/element_footer');              
 	              }
 
 		}
 
-		public function ManageProdiEdit()
+		public function ManageProdiSearch()
+		{
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Prodi (Add)',
+				        'inisialisasiKodeAkun'	=>	'(Akademik)',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageProdiSearch',
+						'pesan'					=>	'',
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+
+		        $this->form_validation->set_rules('keywordPOST', 'Kata Kunci Pencarian', 
+		          'required', array('required' => 'Kata Kunci Harus Diisi')
+		        );
+
+		        $this->form_validation->set_rules('fieldPOST', 'Field Table',
+		          'required', array('required' => 'Anda Harus Memilih salah satu pilihan Pencarian Berdasarkan')
+		        );
+
+	            //Logika Form Validation
+	              if ($this->form_validation->run() == FALSE)
+	              {
+	              	redirect(base_url().'dashboard/akademik/manageProdi/');
+	              }
+	              else
+	              {
+	              	$this->parserTemplate($element_header);
+	              }
+
+		}
+
+		public function ManageProdiDelete()
 		{
 
+				if ($this->input->post('idPOST') == "") 
+				{
+					$element_header	=	array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Prodi (Delete)',
+				        'inisialisasiKodeAkun'	=>	'(Akademik)',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageProdi',
+						'pesan'		=>	'');
+					$this->parserTemplate($element_header);
+				}
+				else
+				{
+					$element_header	=	array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Prodi (Delete)',
+				        'inisialisasiKodeAkun'	=>	'(Akademik)',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageProdi',
+						'id_prodi'	=> $this->input->post('idPOST'),
+						'pesan'		=>	'
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+	            	Data Prodi <b>'.$this->input->post('nama_prodiPOST').'</b> Berhasil Dihapus dari Database
+	            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	            	<span aria-hidden="true">&times;</span>
+	            	</button>
+	            </div>
+						');
+					$this->ProdiModel->deleteProdi($element_header);
+					$this->parserTemplate($element_header);
+				}
+		}
+
+		public function ManageProdiEdit()
+		{
+				if ($this->input->post('idPOST') == "") 
+				{
+					// $this->parserTemplate($element_header);
+				}
+				else
+				{
+				$element_header	=	array(
+					'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+					 'webBagian'				=>	'Manage Prodi (Update)',
+					 'inisialisasiKodeAkun'	=>	'(Akademik)',
+					'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageProdi',
+		        	'id_prodi'				=>	$this->input->post('idPOST'),
+		        	'kd_prodi'				=>	$this->input->post('kd_prodiPOST'),
+		        	'nama_prodi'			=>	$this->input->post('nama_prodiPOST'),
+							'pesan'		=>	'
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+		            	Informasi Data Prodi '.$this->input->post('nama_prodiPOST').' Berhasil Diperbarui
+		            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		            	<span aria-hidden="true">&times;</span>
+		            	</button>
+		            </div>
+							');
+						$this->ProdiModel->updateProdi($element_header);
+						$this->parserTemplate($element_header);
+				}
 		}
 }

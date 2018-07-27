@@ -49,45 +49,68 @@
                 </div>');
               ?>
                 {pesan}
-
+<!-- <select class="form-control demoNamaSingle" >
+  <option value="AL">Maulana </option>
+  <option value="AL">Zihan</option>
+  <option value="WY">Iqbal</option>
+</select> -->
+             <?php echo form_open(base_url().'dashboard/akademik/manageProdi/Search');?>
               <div class="input-group">
                 <div class="input-group-append">
-                  <button onclick="addFunction()" class="btn btn-dark">
+                  <button type="button" data-toggle="modal" data-target="#add" class="btn btn-dark">
                     <i class="fas fa-plus"></i>
                   </button>
-                  <a href="#" class="btn btn-secondary"><i class="fas fa-file-pdf"></i></a>
                 </div>
-                <input type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian">
-                <select class="form-control">
-                  <option>Filter Pencarian Berdasarkan</option>
-                  <option>Kode Prodi</option>
-                  <option>Nama Prodi</option>
+                <input  type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian" name="keywordPOST">
+                <select name="fieldPOST" class="form-control">
+                  <option value="">Pencarian Berdasarkan</option>
+                  <option value="kd_prodi">Kode Prodi</option>
+                  <option value="nama_prodi">Nama Prodi</option>
                 </select>
                 <div class="input-group-append">
-                  <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                  <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                  <a href="#" class="btn btn-secondary"><i class="fas fa-file-pdf"></i></a>
                 </div>
               </div>
+            <?php echo form_close();?>
 
-                <div class="card" id="formDaftar" style="display: none;">
-                  <div class="card-header m-1" >
-                    <b>Form Penambahan Data Prodi</b>
-                  </div>
-                  <div class="card-body">
-                    <?php echo form_open('dashboard/akademik/manageProdi/Add');?>
+<!-- Modal -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <?php echo form_open(base_url().'dashboard/akademik/manageProdi/Add');?>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle"><b>Form Penambahan Data Prodi</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
                       <div class="form-group">
                         <label>Kode Prodi</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Masukkan Kode Prodi" name="kd_prodiPOST">
+                        <input name="kd_prodiPOST" type="text" class="form-control form-control-sm" placeholder="Msukkan Kode Prodi">
                         <small class="form-text text-muted">Masukkan 3 digit huruf inisial Program Studi</small>
                       </div>
                       <div class="form-group">
                         <label>Nama Prodi</label>
                         <input type="text" class="form-control form-control-sm" placeholder="Masukkan Nama Prodi" name="nama_prodiPOST"> </div>
-                      <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Tambahkan</button>
-                      <button type="reset" class="btn btn-info"><i class="fas fa-undo"></i> Reset</button>
-                      <?php echo form_close();?>
-                    </form>
-                  </div>
-                </div>
+
+                    
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="reset" class="btn btn-info"><i class="fas fa-undo"></i> Reset</button>
+        <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i> Tambahkan</button>
+      </div>
+      <?php echo form_close();?>
+    </div>
+  </div>
+</div>
+
+
+
 
               <table class="table">
                 <thead>
@@ -123,7 +146,8 @@
     <div class="modal-content">
       <form action="'.base_url().'dashboard/akademik/manageProdi/Edit" method="post">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"><b>Form Edit Data Prodi '.$row['nama_prodi'].'</b></h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Form Edit Data Prodi<br>
+        <b>'.$row['nama_prodi'].'</b></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -131,14 +155,14 @@
 
       <div class="modal-body">
                       <div class="form-group">
-                        <input name="idProdiPOST" type="hidden" value="'.$row['id_prodi'].'" />
+                        <input name="idPOST" type="hidden" value="'.$row['id_prodi'].'" />
                         <label>Kode Prodi</label>
-                        <input name="kdProdiPOST" type="text" class="form-control form-control-sm" name="kd_prodiPOST" value="'.$row['kd_prodi'].'">
+                        <input name="kd_prodiPOST" type="text" class="form-control form-control-sm" value="'.$row['kd_prodi'].'">
                         <small class="form-text text-muted">Masukkan 3 digit huruf inisial Program Studi</small>
                       </div>
                       <div class="form-group">
                         <label>Nama Prodi</label>
-                        <input type="text" class="form-control form-control-sm" value="'.$row['nama_prodi'].' name="namaProdiPOST"> </div>
+                        <input type="text" class="form-control form-control-sm" value="'.$row['nama_prodi'].'" name="nama_prodiPOST"> </div>
 
                     
       </div>
@@ -158,8 +182,10 @@
     <div class="modal-content">
       <form action="'.base_url().'dashboard/akademik/manageProdi/Delete" method="post">
         <input name="idPOST" type="hidden" value="'.$row['id_prodi'].'" />
+        <input name="nama_prodiPOST" type="hidden" value="'.$row['nama_prodi'] .'" />
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"><b>Hapus data prodi '.$row['nama_prodi'].'</b></h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Hapus data prodi<br>
+        <b> '.$row['nama_prodi'].'</b></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -192,15 +218,3 @@
     </div>
   </div>
 
-<!-- Tombol Tambah bisa menampilkan elemen baru atau menyembunyikannya -->
-<script>
-function addFunction () {
-   var x = document.getElementById('formDaftar');
-    if (x.style.display === 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-
-</script>
