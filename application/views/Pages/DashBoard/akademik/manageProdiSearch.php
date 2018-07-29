@@ -1,6 +1,7 @@
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="<?php echo base_url();?>dashboard">{webBagian} {inisialisasiKodeAkun}</a>
+      <a class="navbar-brand" href="<?php echo base_url();?>dashboard">Dashboard <br>
+        <small><b>{inisialisasiKodeAkun}<b></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>

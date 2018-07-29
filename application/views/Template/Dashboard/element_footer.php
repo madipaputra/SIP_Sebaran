@@ -20,6 +20,10 @@
 $(document).ready(function() {
     $('.demoNamaSingle').select2();
 });
+
+$(document).ready(function() {
+    $('.prodiAutoComplete').select2();
+});
 </script>
 
   <script src="<?php echo base_url()?>external/propper/popper.min.js"></script>
