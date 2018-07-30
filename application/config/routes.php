@@ -77,6 +77,8 @@ $route['dashboard']	=	'PageDashBoard/DashBoardPage';
 
 		//Manage Dosen
 		$route['dashboard/akademik/manageDosen']		=	'ManageDosen/ManageDosenPage';
+		$route['dashboard/akademik/manageDosen/Add']	=	'ManageDosen/ManageDosenAdd';
+		$route['dashboard/akademik/manageDosen/Delete']	=	'ManageDosen/ManageDosenDelete';
 
 
 

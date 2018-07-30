@@ -1,4 +1,4 @@
-<?php
+s<?php
 
 
 class PageDashBoard extends CI_Controller
@@ -10,6 +10,7 @@ class PageDashBoard extends CI_Controller
 		$this->cek_login();
 		$this->load->model('ProdiModel');
 	}
+
 	public function cek_login()
 	{
 		if ($this->session->userdata('username') == "" || $this->session->userdata('kd_akun') == "" || $this->session->userdata('id_akun') == "") 

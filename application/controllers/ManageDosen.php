@@ -194,4 +194,91 @@ class ManageDosen extends CI_Controller
 			}
 		}
 
+		public function ManageDosenAdd()
+		{
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Dosen (Add)',
+				        'inisialisasiKodeAkun'	=>	'(Akademik)',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageDosen',
+						'pesan'					=>	''
+				);
+
+
+		        $this->form_validation->set_rules('nama_dosenPOST', 'Nama Dosen', 
+		          'required', array('required' => 'Nama Dosen Harus Diisi')
+		        );
+
+		        $this->form_validation->set_rules('nidnPOST', 'NIDN',
+		          'required', array('required' => 'NIDN Harus Diisi')
+		        );
+
+		        
+		        $this->form_validation->set_rules('alamatPOST', 'Alamat Dosen', 
+		          'required', array('required' => 'Alamat Dosen Harus Diisi')
+		        );
+
+		        $this->form_validation->set_rules('no_telpPOST', 'NIDN',
+		          'required', array('required' => 'Nomor Telepon Dosen Harus Diisi')
+		        );
+
+	            //Logika Form Validation
+	              if ($this->form_validation->run() == FALSE)
+	              {
+	                $this->parser->parse('Template/Dashboard/element_header', $element_header);
+	                $this->load->view('Template/Dashboard/element_footer');
+	              }
+
+	              else
+	              {
+	                $this->DosenModel->insertDosen();
+	                $element_header['pesan'] = '
+	                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+	                  Data Dosen Berhasil Ditambahkan ke dalam Database
+	                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	                      <span aria-hidden="true">&times;</span>
+	                    </button>
+	                  </div>
+	                  ';
+
+	                $this->parser->parse('Template/Dashboard/element_header', $element_header);
+	                $this->load->view('Template/Dashboard/element_footer');              
+	              }
+
+		}
+
+		public function ManageDosenDelete()
+		{
+
+				if ($this->input->post('idPOST') == "") 
+				{
+					$element_header	=	array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Dosen (Delete)',
+				        'inisialisasiKodeAkun'	=>	'(Akademik)',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageDosen',
+						'pesan'		=>	'');
+					$this->parserTemplate($element_header);
+				}
+				else
+				{
+					$element_header	=	array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Dosen (Delete)',
+				        'inisialisasiKodeAkun'	=>	'(Akademik)',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageDosen',
+						'id_dosen'	=> $this->input->post('idPOST'),
+						'pesan'		=>	'
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+	            	Data Dosen <b>'.$this->input->post('nama_dosenPOST').'</b> Berhasil Dihapus dari Database
+	            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	            	<span aria-hidden="true">&times;</span>
+	            	</button>
+	            </div>
+						');
+					$this->DosenModel->deleteDosen($element_header);
+					$this->parserTemplate($element_header);
+				}
+		}
+
 }

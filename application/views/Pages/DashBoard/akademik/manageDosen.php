@@ -33,7 +33,15 @@
       <div class="row">
         <div class="p-3 align-self-center col-md-12">
           <div class="card">
-            <h1 class="display-3 text-center">Manage Dosen</h1>
+            <h1 class="display-3 text-center">Manage Dosen
+              <br>
+<?php
+// $kalimat = "123456789011123";
+// $sub_kalimat = substr($kalimat,10,5);
+// echo $sub_kalimat;
+// // 5 digit belakang diambil
+?>
+            </h1>
             <div class="card-block p-3">
 
               <?php               
@@ -64,8 +72,8 @@
                 <input  type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian" name="keywordPOST">
                 <select name="fieldPOST" class="form-control">
                   <option value="">Pencarian Berdasarkan</option>
-                  <option value="kd_prodi">Kode Prodi</option>
-                  <option value="nama_prodi">Nama Prodi</option>
+                  <option value="kd_prodi">Kode Dosen</option>
+                  <option value="nama_prodi">Nama Dosen</option>
                 </select>
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
@@ -78,9 +86,9 @@
 <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-    <?php echo form_open(base_url().'dashboard/akademik/manageProdi/Add');?>
+    <?php echo form_open(base_url().'dashboard/akademik/manageDosen/Add');?>
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle"><b>Form Penambahan Data Prodi</b></h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle"><b>Form Penambahan Data Dosen</b></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -88,14 +96,21 @@
 
       <div class="modal-body">
                       <div class="form-group">
-                        <label>Kode Prodi</label>
-                        <input name="kd_prodiPOST" type="text" class="form-control form-control-sm" placeholder="Msukkan Kode Prodi">
-                        <small class="form-text text-muted">Masukkan 3 digit huruf inisial Program Studi</small>
+                        <label>Nama Dosen</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Masukkan Nama Dosen" name="nama_dosenPOST"> 
                       </div>
                       <div class="form-group">
-                        <label>Nama Prodi</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Masukkan Nama Prodi" name="nama_prodiPOST"> </div>
-
+                        <label>NIDN</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Masukkan NIDN" name="nidnPOST"> 
+                      </div>
+                      <div class="form-group">
+                        <label>Alamat</label>
+                        <textarea class="form-control form-control-sm" name="alamatPOST">Msukkan Alamat</textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>Nomor Telepon</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Masukkan Nomor Telepon Dosen" name="no_telpPOST"> 
+                      </div>
                     
       </div>
 
@@ -117,9 +132,7 @@
                   <tr align="center">
                     <th>Kode Dosen</th>
                     <th>Nama Dosen</th>
-                    <th>Prodi</th>
                     <th>NIDN</th>
-                    <th>Alamat</th>
                     <th>Nomor Telepon</th>
                     <th>Aksi</th>
                   </tr>
@@ -129,18 +142,19 @@
                 <?php
                 $this->db->get('tb_prodi');
                 $query = $this->db->get('tb_dosen');
-                $queryGetProdi  = $this->db->get('tb_prodi');
 
                   foreach ($query->result_array() as $row)
                   {
-                       $queryGetProdiByKode  = $this->db->get_where('tb_prodi', array('kd_prodi' => $row['kd_prodi']));
+                      $detailKode   = $row['kd_dosen'];
                           echo '
                             <tr>
                               <td>'.$row['kd_dosen'].'</td>
-                              <td>'.$row['nama_dosen'].'</td>
-                              <td>'.$row['kd_prodi'].'</td>
+                              <td>
+                              <a href="'.base_url().'dashboard/akademik/manageDosen/Detail/'.$detailKode.'" style="color:black;">
+                              '.$row['nama_dosen'].'
+                              </a>
+                              </td>
                               <td>'.$row['nidn'].'</td>
-                              <td>'.$row['alamat'].'</td>
                               <td>'.$row['no_telp'].'</td>
                               <td align="center">
                                 <button data-toggle="modal" data-target="#editData'.$row['kd_dosen'].'" class="btn btn-warning"><i class="fas fa-edit"></i></button>
@@ -171,32 +185,7 @@
                       <div class="form-group">
                         <label>Nama Dosen</label>
                         <input type="text" class="form-control form-control-sm" value="'.$row['nama_dosen'].'" name="nama_dosenPOST"> 
-                      </div>
-                      
-                      <div>
-                        <label>Prodi</label><br>
-                       <select class="form-control  " >';
-
-                        foreach ($queryGetProdiByKode->result_array() as $rowNamaProdi)
-                        {
-                          echo '
-                              <option value="'.$row['kd_prodi'].'">'.$rowNamaProdi['nama_prodi'].'</option>
-                          ';
-                        }'
-                        
-                        ';
-                
-
-                        foreach ($queryGetProdi->result_array() as $rowProdi)
-                        {
-                          echo '
-                              <option value="'.$rowProdi['kd_prodi'].'">'.$rowProdi['nama_prodi'].'</option>
-                          ';
-                        }
-
-                      echo '
-                        </select>
-                      </div>
+                      </div>                      
 
                       <div class="form-group">
                         <label>NIDN</label>

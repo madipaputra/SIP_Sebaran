@@ -15,7 +15,8 @@ class ManageProdi extends CI_Controller
 
 	public function cek_login()
 	{
-		if ($this->session->userdata('username') == "" || $this->session->userdata('kd_akun') == "" || $this->session->userdata('id_akun') == "") {
+		if ($this->session->userdata('username') == "" || $this->session->userdata('kd_akun') == "" || $this->session->userdata('id_akun') == "") 
+		{
 			redirect(base_url());
 		}
 	}
