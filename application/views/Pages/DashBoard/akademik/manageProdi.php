@@ -21,12 +21,9 @@
           </li>
         </ul>
         <form class="form-inline m-0">
-          <button class="btn btn-success text-light" type="submit">
-            <b>Akun</b>
-          </button>
-          <button class="btn btn-danger text-light" type="submit">
+          <a href="<?php echo base_url();?>logout" class="btn btn-danger text-light" type="submit">
             <b>Logout</b>
-          </button>
+          </a>
         </form>
       </div>
     </div>

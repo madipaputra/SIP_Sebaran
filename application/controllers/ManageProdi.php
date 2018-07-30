@@ -6,11 +6,20 @@
 class ManageProdi extends CI_Controller
 {
 	
-		function __construct()
-			{
-				parent::__construct();
-				$this->load->model('ProdiModel');
-			}
+	function __construct()
+		{
+			parent::__construct();
+			$this->cek_login();
+			$this->load->model('ProdiModel');
+		}
+
+	public function cek_login()
+	{
+		if ($this->session->userdata('username') == "" || $this->session->userdata('kd_akun') == "" || $this->session->userdata('id_akun') == "") {
+			redirect(base_url());
+		}
+	}
+
 
 		function parserTemplate($element_header)
 		{

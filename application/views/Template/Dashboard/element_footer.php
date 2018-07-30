@@ -18,11 +18,7 @@
 <script type="text/javascript">
 // In your Javascript (external .js resource or <script> tag)
 $(document).ready(function() {
-    $('.demoNamaSingle').select2();
-});
-
-$(document).ready(function() {
-    $('.prodiAutoComplete').select2();
+    $('.demoAutoComplete').select2();
 });
 </script>
 

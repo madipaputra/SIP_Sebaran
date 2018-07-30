@@ -52,7 +52,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //Default Controller. Controller Utama
 $route['default_controller']	=	'sip_sebaran/loginPage';
+$route['index']					=	'sip_sebaran/loginPage';
 $route['Login/prosesLogin']		=	'sip_sebaran/doLogin';
+$route['logout']				=	'AkunController/logout';
+
+
+//Routing URL Pendaftaran
+$route['Daftar'] 							= 'sip_sebaran/registerPage';
+$route['Daftar/prosesDaftar'] 				= 'AkunController/doRsegister'; 
 
 //Controller Dashboard Prodi atau Akademik
 $route['dashboard']	=	'PageDashBoard/DashBoardPage';
@@ -71,10 +78,6 @@ $route['dashboard']	=	'PageDashBoard/DashBoardPage';
 		//Manage Dosen
 		$route['dashboard/akademik/manageDosen']		=	'ManageDosen/ManageDosenPage';
 
-	//Routing URL Pendaftaran
-	$route['Daftar'] 							= 'sip_sebaran/registerPage';
-	$route['Daftar/prosesDaftar'] 				= 'AkunController/doRsegister'; 
-	//Proses Pendaftaran
 
 
 

@@ -15,10 +15,17 @@ class Sip_sebaran extends CI_Controller {
 	function __construct()
 	{
 	    parent::__construct();
+	    $this->cek_login();
 		$this->load->model('akun');
 	}
 
 
+	public function cek_login()
+	{
+		if ($this->session->userdata('username') != "" || $this->session->userdata('kd_akun') != "" || $this->session->userdata('id_akun') != "") {
+			redirect(base_url().'dashboard');
+		}
+	}
 
 	public function index(){}
 
@@ -85,8 +92,7 @@ class Sip_sebaran extends CI_Controller {
 								$sessionData = array(
 								        'username'  => $row['username'],
 								        'kd_akun'	=> $row['kd_akun'],
-								        'id_akun'	=> $row['id_akun'],
-								        'sudah_login' => 1
+								        'id_akun'	=> $row['id_akun']
 								);
 								//perintah menambahkan nilai pada setiap session
 								$this->session->set_userdata($sessionData);

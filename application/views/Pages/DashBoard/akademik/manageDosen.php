@@ -21,12 +21,9 @@
           </li>
         </ul>
         <form class="form-inline m-0">
-          <button class="btn btn-success text-light" type="submit">
-            <b>Akun</b>
-          </button>
-          <button class="btn btn-danger text-light" type="submit">
+          <a href="<?php echo base_url();?>logout" class="btn btn-danger text-light" type="submit">
             <b>Logout</b>
-          </button>
+          </a>
         </form>
       </div>
     </div>
@@ -177,8 +174,8 @@
                       </div>
                       
                       <div>
-                        <label>Prodi</label>
-                       <select class="form-control" >';
+                        <label>Prodi</label><br>
+                       <select class="form-control  " >';
 
                         foreach ($queryGetProdiByKode->result_array() as $rowNamaProdi)
                         {
@@ -268,3 +265,13 @@
     </div>
   </div>
 
+<script>
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("#textnya").hide();
+    });
+    $("#show").click(function(){
+        $("#textnya").show();
+    });
+});
+</script>
