@@ -9,7 +9,7 @@ class ManageDosen extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->cek_login()
+		$this->cek_login();
 		$this->load->model('DosenModel');
 	}
 

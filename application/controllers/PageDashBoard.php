@@ -14,7 +14,7 @@ class PageDashBoard extends CI_Controller
 	{
 		if ($this->session->userdata('username') == "" || $this->session->userdata('kd_akun') == "" || $this->session->userdata('id_akun') == "") 
 		{
-			redirect(base_url().'dashboard');
+			redirect(base_url());
 		}
 	}
 
