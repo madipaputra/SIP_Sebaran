@@ -209,19 +209,6 @@ class ManageDosen extends CI_Controller
 		          'required', array('required' => 'Nama Dosen Harus Diisi')
 		        );
 
-		        $this->form_validation->set_rules('nidnPOST', 'NIDN',
-		          'required', array('required' => 'NIDN Harus Diisi')
-		        );
-
-		        
-		        $this->form_validation->set_rules('alamatPOST', 'Alamat Dosen', 
-		          'required', array('required' => 'Alamat Dosen Harus Diisi')
-		        );
-
-		        $this->form_validation->set_rules('no_telpPOST', 'NIDN',
-		          'required', array('required' => 'Nomor Telepon Dosen Harus Diisi')
-		        );
-
 	            //Logika Form Validation
 	              if ($this->form_validation->run() == FALSE)
 	              {
@@ -278,6 +265,35 @@ class ManageDosen extends CI_Controller
 						');
 					$this->DosenModel->deleteDosen($element_header);
 					$this->parserTemplate($element_header);
+				}
+		}
+
+		public function ManageDosenEdit()
+		{
+				if ($this->input->post('idPOST') == "") 
+				{
+					redirect(base_url().'dashboard/akademik/manageDosen');
+				}
+				else
+				{
+				$element_header	=	array(
+					'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+					 'webBagian'				=>	'Manage Dosen (Update)',
+					 'inisialisasiKodeAkun'	=>	'Akademik',
+					'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageDosen',
+		        	'id_dosen'				=>	$this->input->post('idPOST'),
+		        	'nama_dosen'				=>	$this->input->post('nama_dosenPOST'),
+		        	'nidn'			=>	$this->input->post('nidnPOST'),
+							'pesan'		=>	'
+					<div class="alert alert-success alert-dismissible fade show" role="alert">
+		            	Informasi Data Dosen '.$this->input->post('nama_dosenPOST').' Berhasil Diperbarui
+		            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		            	<span aria-hidden="true">&times;</span>
+		            	</button>
+		            </div>
+							');
+						$this->DosenModel->updateDosen($element_header);
+						$this->parserTemplate($element_header);
 				}
 		}
 

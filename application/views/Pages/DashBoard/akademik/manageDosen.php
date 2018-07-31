@@ -72,7 +72,7 @@
                 <input  type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian" name="keywordPOST">
                 <select name="fieldPOST" class="form-control">
                   <option value="">Pencarian Berdasarkan</option>
-                  <option value="kd_prodi">Kode Dosen</option>
+                  <option value="kd_prodi">NIDN</option>
                   <option value="nama_prodi">Nama Dosen</option>
                 </select>
                 <div class="input-group-append">
@@ -96,20 +96,12 @@
 
       <div class="modal-body">
                       <div class="form-group">
-                        <label>Nama Dosen</label>
+                        <label>Nama Dosen (Lengkap Dengan Gelar Pendidikan)</label>
                         <input type="text" class="form-control form-control-sm" placeholder="Masukkan Nama Dosen" name="nama_dosenPOST"> 
                       </div>
                       <div class="form-group">
                         <label>NIDN</label>
                         <input type="text" class="form-control form-control-sm" placeholder="Masukkan NIDN" name="nidnPOST"> 
-                      </div>
-                      <div class="form-group">
-                        <label>Alamat</label>
-                        <textarea class="form-control form-control-sm" name="alamatPOST">Msukkan Alamat</textarea>
-                      </div>
-                      <div class="form-group">
-                        <label>Nomor Telepon</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Masukkan Nomor Telepon Dosen" name="no_telpPOST"> 
                       </div>
                     
       </div>
@@ -130,10 +122,8 @@
               <table class="table">
                 <thead>
                   <tr align="center">
-                    <th>Kode Dosen</th>
-                    <th>Nama Dosen</th>
                     <th>NIDN</th>
-                    <th>Nomor Telepon</th>
+                    <th>Nama Dosen</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -145,26 +135,29 @@
 
                   foreach ($query->result_array() as $row)
                   {
-                      $detailKode   = $row['kd_dosen'];
+                    if ($row['nidn']  == 0) {
+                      $row['nidn']  = "Belum Ada";
+                    }
+                    else{
+                      $row['nidn'] = '0'.$row['nidn'];
+                    }
                           echo '
                             <tr>
-                              <td>'.$row['kd_dosen'].'</td>
+                              <td>'.
+                              $row['nidn']
+                              .'</td>
                               <td>
-                              <a href="'.base_url().'dashboard/akademik/manageDosen/Detail/'.$detailKode.'" style="color:black;">
                               '.$row['nama_dosen'].'
-                              </a>
                               </td>
-                              <td>'.$row['nidn'].'</td>
-                              <td>'.$row['no_telp'].'</td>
                               <td align="center">
-                                <button data-toggle="modal" data-target="#editData'.$row['kd_dosen'].'" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button data-toggle="modal" data-target="#editData'.$row['id_dosen'].'" class="btn btn-warning"><i class="fas fa-edit"></i></button>
 
-                                <button data-toggle="modal" data-target="#deleteData'.$row['kd_dosen'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button data-toggle="modal" data-target="#deleteData'.$row['id_dosen'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
 
                               </td>
 
 <!-- Modal Edit Data '.$row['nama_dosen'] .'-->
-<div class="modal fade" id="editData'.$row['kd_dosen'].'" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="editData'.$row['id_dosen'].'" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <form action="'.base_url().'dashboard/akademik/manageDosen/Edit" method="post">
@@ -178,26 +171,15 @@
 
       <div class="modal-body">
                       <div class="form-group">
-                        <input name="idPOST" type="hidden" value="'.$row['id_dosen'].'" />
-                        <label>Kode Dosen</label>
-                        <input name="kd_dosenPOST" type="text" class="form-control form-control-sm" value="'.$row['kd_dosen'].'">
-                      </div>
-                      <div class="form-group">
                         <label>Nama Dosen</label>
+                        <input name="idPOST" type="hidden" value="'.$row[
+                          'id_dosen'].'">
                         <input type="text" class="form-control form-control-sm" value="'.$row['nama_dosen'].'" name="nama_dosenPOST"> 
                       </div>                      
 
                       <div class="form-group">
                         <label>NIDN</label>
                         <input type="text" class="form-control form-control-sm" value="'.$row['nidn'].'" name="nidnPOST"> 
-                      </div>
-                      <div class="form-group">
-                        <label>Alamat</label>
-                        <input type="text" class="form-control form-control-sm" value="'.$row['alamat'].'" name="alamatPOST"> 
-                      </div>
-                      <div class="form-group">
-                        <label>Nomor Telepon</label>
-                        <input type="text" class="form-control form-control-sm" value="'.$row['no_telp'].'" name="no_telpPOST"> 
                       </div>
                     
       </div>
@@ -214,7 +196,7 @@
 </div>
 
 <!-- Modal Hapus Data '.$row['nama_dosen'] .'-->
-<div class="modal fade" id="deleteData'.$row['kd_dosen'].'" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="deleteData'.$row['id_dosen'].'" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <form action="'.base_url().'dashboard/akademik/manageDosen/Delete" method="post">
