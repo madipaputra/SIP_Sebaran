@@ -65,21 +65,25 @@ $route['Daftar/prosesDaftar'] 				= 'AkunController/doRsegister';
 $route['dashboard']	=	'PageDashBoard/DashBoardPage';
 
 	// Controller Manage Data (Prodi)
-		$route['dashboard/prodi/manageProdi']	=	'PageDashBoard/ManageProdiPage';
+	$route['dashboard/prodi/manageProdi']				=	'PageDashBoard/ManageProdiPage';
 
 	// Controller Manage Data (Akademik)
 		//Manage Prodi
-		$route['dashboard/akademik/manageProdi']		=	'ManageProdi/ManageProdiPage';
-		$route['dashboard/akademik/manageProdi/Add']	=	'ManageProdi/ManageProdiAdd';
-		$route['dashboard/akademik/manageProdi/Search']	=	'ManageProdi/ManageProdiSearch';
-		$route['dashboard/akademik/manageProdi/Delete']	=	'ManageProdi/ManageProdiDelete';
-		$route['dashboard/akademik/manageProdi/Edit']	=	'ManageProdi/ManageProdiEdit';
+		$route['dashboard/akademik/manageProdi']			=	'ManageProdi/ManageProdiPage';
+		$route['dashboard/akademik/manageProdi/Add']		=	'ManageProdi/ManageProdiAdd';
+		$route['dashboard/akademik/manageProdi/Search']		=	'ManageProdi/ManageProdiSearch';
+		$route['dashboard/akademik/manageProdi/Delete']		=	'ManageProdi/ManageProdiDelete';
+		$route['dashboard/akademik/manageProdi/Edit']		=	'ManageProdi/ManageProdiEdit';
 
 		//Manage Dosen
-		$route['dashboard/akademik/manageDosen']		=	'ManageDosen/ManageDosenPage';
-		$route['dashboard/akademik/manageDosen/Add']	=	'ManageDosen/ManageDosenAdd';
-		$route['dashboard/akademik/manageDosen/Delete']	=	'ManageDosen/ManageDosenDelete';
-		$route['dashboard/akademik/manageDosen/Edit']	=	'manageDosen/ManageDosenEdit';
+		$route['dashboard/akademik/manageDosen']			=	'ManageDosen/ManageDosenPage';
+		$route['dashboard/akademik/manageDosen/Add']		=	'ManageDosen/ManageDosenAdd';
+		$route['dashboard/akademik/manageDosen/Delete']		=	'ManageDosen/ManageDosenDelete';
+		$route['dashboard/akademik/manageDosen/Edit']		=	'manageDosen/ManageDosenEdit';
+
+		//Manage Matakuliah
+		$route['dashboard/akademik/manageMatkul']			=	'ManageMatkul/ManageMatkulPage';
+		$route['dashboard/akademik/manageMatkul/(:any)']	=	'ManageMatkul/ManageMatkulPage';
 
 
 

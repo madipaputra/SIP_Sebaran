@@ -82,7 +82,7 @@
                 <tbody>
                 <?php
                 
-                $query = $this->db->get('tb_prodi', array(''.$fieldTable.'' => $keywordData));
+                $query  = $this->db->query("SELECT * FROM tb_prodi WHERE $fieldTable LIKE '%$keywordData%'");
 
                   foreach ($query->result_array() as $row)
                   {

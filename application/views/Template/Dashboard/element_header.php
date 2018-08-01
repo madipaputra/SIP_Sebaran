@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="<?php echo base_url();?>/external/select2/css/select2.min.css" type="text/css"> 
   <link rel="stylesheet" href="<?php echo base_url();?>/external/select2-bootstrap4/dist/select2-bootstrap4.min.css" type="text/css"> 
+  <link rel="stylesheet" href="<?php echo base_url();?>/external/contextmenu/class2context.css">
 
   </head>
 <body>

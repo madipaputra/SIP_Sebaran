@@ -15,6 +15,12 @@
   <script src="<?php echo base_url()?>external/jquery/jquery-3.3.1.min.js"></script>
   <script src="<?php echo base_url()?>external/select2/js/select2.min.js"></script>
 
+  <script src="<?php echo base_url();?>/external/contextmenu/Tumpukan.js"></script>
+  <script src="<?php echo base_url();?>/external/contextmenu/class2context.js"></script>
+  <script src="<?php echo base_url();?>/external/contextmenu/ObjekMenu.js"></script>
+  <script src="<?php echo base_url();?>/external/contextmenu/ContextMenu.js"></script>
+
+
 <script type="text/javascript">
 // In your Javascript (external .js resource or <script> tag)
 $(document).ready(function() {
