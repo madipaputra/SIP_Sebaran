@@ -29,8 +29,6 @@
     </div>
   </nav>
   <div class="p-5 bg-secondary">
-    <div class="container">
-      <div class="row">
         <div class="p-3 align-self-center col-md-12">
           <div class="card">
             <h1 class="display-3 text-center">Manage Dosen
@@ -77,7 +75,6 @@
                 </select>
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-                  <a href="#" class="btn btn-secondary"><i class="fas fa-file-pdf"></i></a>
                 </div>
               </div>
             <?php echo form_close();?>
@@ -232,8 +229,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
   </div>
 
 <script>

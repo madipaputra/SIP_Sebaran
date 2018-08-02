@@ -29,7 +29,6 @@
     </div>
   </nav>
   <div class="p-5 bg-secondary" >
-    <div class="container">
       <div class="row">
        
 
@@ -43,7 +42,7 @@
                       <div class=" align-self-center col-md-6">
                         <div class="card">
                           <div class="card-block p-5">
-                            <b><h5 class="text-center">'.$row['nama_prodi'].'</h5></b>
+                            <h5 class="text-center"><b>'.$row['nama_prodi'].'</b></h5>
                             <p class="text-center">
                               <b>3</b> matakuliah sudah di setujui akademik<br>
                               <b>0</b> matakuliah belum di setujui akademik
@@ -51,9 +50,10 @@
                             <hr>
                             <div align="center">
                             '.
-                              form_open(''.base_url().'dashboard/akademik/manageMatkul/'.$row['kd_prodi'], array('method'=>'get'))
+                              form_open(''.base_url().'dashboard/akademik/manageMatkulProdi')
                             .'
-                            <a href class="btn btn-dark">Manage Matkul Prodi ini</a>
+                            <input type="hidden" name="kodeProdiPOST" value="'.$row['kd_prodi'].'"/>
+                            <button type="submit" class="btn btn-dark">Manage Matkul Prodi ini</button>
                             '.
                               form_close()
                             .'
@@ -68,5 +68,4 @@
 
         
       </div>
-    </div>
   </div>

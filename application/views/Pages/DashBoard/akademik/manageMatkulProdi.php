@@ -1,20 +1,20 @@
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="<?php echo base_url();?>dashboard">Dashboard <br>
-        <small><b>{inisialisasiKodeAkun}<b></a>
+        <small><b>Akademik</b></small></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item text-light">
-            <a class="nav-link text-white" href="<?php echo base_url();?>dashboard/akademik/manageProdi">Prodi</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageProdi">Prodi</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageDosen">Dosen</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageMatkul">Matakuliah</a>
+            <a class="nav-link text-white" href="<?php echo base_url();?>dashboard/akademik/manageMatkul">Matakuliah</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageKelas">Kelas</a>
@@ -28,10 +28,17 @@
       </div>
     </div>
   </nav>
-  <div class="p-5 bg-secondary">
-        <div class="p-3 align-self-center col-md-12">
+
+<?php 
+  $querygetProdi = $this->db->get_where('tb_prodi', array('kd_prodi'=>$nama_prodi));
+  foreach ($querygetProdi->result_array() as $rowProdi) { ?>
+
+  <div class="p-2 bg-secondary">
+
+        <div class="p-1 align-self-center col-md-12">
           <div class="card">
-            <h1 class="display-3 text-center">Manage Prodi</h1>
+            <a href="<?php echo(base_url())?>dashboard/akademik/manageMatkul" class="btn btn-dark text-white">Kembali Ke Halaman List Matakuliah (Semua Prodi)</a>
+            <h1 class="display-6 text-center">Manage Matakuliah Prodi <?php echo $rowProdi['nama_prodi']?></h1>
             <div class="card-block p-3">
 
               <?php               
@@ -50,19 +57,93 @@
   <option value="AL">Zihan</option>
   <option value="WY">Iqbal</option>
 </select> -->
+
+
+
              <?php echo form_open(base_url().'dashboard/akademik/manageProdi/Search');?>
               <div class="input-group">
-                <input name="keywordPOST" type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian">
+                <div class="input-group-append">
+                  <button type="button" data-toggle="collapse" data-target="#formAdd" class="btn btn-dark">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <input  type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian" name="keywordPOST">
                 <select name="fieldPOST" class="form-control">
                   <option value="">Pencarian Berdasarkan</option>
-                  <option value="kd_prodi">Kode Prodi</option>
-                  <option value="nama_prodi">Nama Prodi</option>
+                  <option value="kd_prodi">Kode Matakuliah</option>
+                  <option value="nama_prodi">Nama Matakuliah</option>
                 </select>
                 <div class="input-group-append">
                   <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                 </div>
               </div>
+
             <?php echo form_close();?>
+
+<br>
+  <div id="formAdd" class="collapse container-fluid">
+    <h3 align="center"><b>Form Penambahan Data Matakuliah Prodi <?php echo $rowProdi['nama_prodi']?></b></h3>
+  <?php echo form_open(base_url().'dashboard/akademik/manageMatkul/Add');?>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label for="inputEmail4">Kode Matakuliah</label>
+        <input name="kd_matkulPOST" type="email" class="form-control" id="inputEmail4" placeholder="Masukkan Kode">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Nama Matakuliah</label>
+        <input name="nama_matkulPOST" type="password" class="form-control" id="inputPassword4" placeholder="Masukkan Nama Matakuliah">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputEmail4">SKS Teori</label>
+        <input name="sks_teoriPOST" type="number" class="form-control" id="inputEmail4" placeholder="Jumlah SKS Teori">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputEmail4">SKS Praktek</label>
+        <input name="sks_praktekPOST" type="number" class="form-control" id="inputEmail4" placeholder="Jumlah SKS Praktek">
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Tambahkan</button>
+    <button type="reset" class="btn">Reset</button>
+  <?php echo form_close()?>
+  </div>
+<br>
+
+<!-- Modal -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <?php echo form_open(base_url().'dashboard/akademik/manageProdi/Add');?>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle"><b>Form Penambahan Data Prodi</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+                      <div class="form-group">
+                        <label>Kode Prodi</label>
+                        <input name="kd_prodiPOST" type="text" class="form-control form-control-sm" placeholder="Msukkan Kode Prodi">
+                        <small class="form-text text-muted">Masukkan 3 digit huruf inisial Program Studi</small>
+                      </div>
+                      <div class="form-group">
+                        <label>Nama Prodi</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Masukkan Nama Prodi" name="nama_prodiPOST"> </div>
+
+                    
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="reset" class="btn btn-info"><i class="fas fa-undo"></i> Reset</button>
+        <button type="submit" class="btn btn-success"><i class="fas fa-plus"></i> Tambahkan</button>
+      </div>
+      <?php echo form_close();?>
+    </div>
+  </div>
+</div>
 
 
 
@@ -70,16 +151,19 @@
               <table class="table">
                 <thead>
                   <tr align="center">
-                    <th>Kode Prodi</th>
-                    <th>Nama Prodi</th>
+                    <th>Kode Matakuliah</th>
+                    <th>Nama Matakuliah</th>
+                    <th>SKS Teori</th>
+                    <th>SKS Praktek</th>
+                    <th>Status</th>
                     <th>Aksi</th>
+
                   </tr>
                 </thead>
 
                 <tbody>
                 <?php
-                
-                $query  = $this->db->query("SELECT * FROM tb_prodi WHERE $fieldTable LIKE '%$keywordData%'");
+                $query = $this->db->get('tb_matakuliah');
 
                   foreach ($query->result_array() as $row)
                   {
@@ -111,14 +195,14 @@
 
       <div class="modal-body">
                       <div class="form-group">
-                        <input name="idProdiPOST" type="hidden" value="'.$row['id_prodi'].'" />
+                        <input name="idPOST" type="hidden" value="'.$row['id_prodi'].'" />
                         <label>Kode Prodi</label>
-                        <input name="kdProdiPOST" type="text" class="form-control form-control-sm" name="kd_prodiPOST" value="'.$row['kd_prodi'].'">
+                        <input name="kd_prodiPOST" type="text" class="form-control form-control-sm" value="'.$row['kd_prodi'].'">
                         <small class="form-text text-muted">Masukkan 3 digit huruf inisial Program Studi</small>
                       </div>
                       <div class="form-group">
                         <label>Nama Prodi</label>
-                        <input type="text" class="form-control form-control-sm" value="'.$row['nama_prodi'].'" name="namaProdiPOST"> </div>
+                        <input type="text" class="form-control form-control-sm" value="'.$row['nama_prodi'].'" name="nama_prodiPOST"> </div>
 
                     
       </div>
@@ -138,6 +222,7 @@
     <div class="modal-content">
       <form action="'.base_url().'dashboard/akademik/manageProdi/Delete" method="post">
         <input name="idPOST" type="hidden" value="'.$row['id_prodi'].'" />
+        <input name="nama_prodiPOST" type="hidden" value="'.$row['nama_prodi'] .'" />
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Hapus data prodi<br>
         <b> '.$row['nama_prodi'].'</b></h5>
@@ -170,3 +255,5 @@
           </div>
         </div>
   </div>
+<?php }?>
+

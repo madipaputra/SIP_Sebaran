@@ -17,7 +17,7 @@
             <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageMatkul">Matakuliah</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageKelas">Kelas</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageKelas">Sebaran</a>
           </li>
         </ul>
         <form class="form-inline m-0">
@@ -35,7 +35,7 @@
           <div class="card">
             <div class="card-block p-5">
               <h1 class="text-center">15 </h1>
-              <h3 class="text-center">Prodi</h3>
+              <h4 class="text-center">Prodi</h4>
               <hr>
               <a href="#" class="btn btn-dark">Lebih Detail</a>
             </div>
@@ -45,7 +45,7 @@
           <div class="card">
             <div class="card-block p-5">
               <h1 class="text-center">75 </h1>
-              <h3 class="text-center">Dosen</h3>
+              <h4 class="text-center">Dosen</h4>
               <hr>
               <a href="#" class="btn btn-dark">Lebih Detail</a>
             </div>
@@ -55,7 +55,7 @@
           <div class="card">
             <div class="card-block p-5">
               <h1>1500</h1>
-              <h3>Matkul</h3>
+              <h4>Matkul</h4>
               <hr>
               <a href="#" class="btn btn-dark">Lebih Detail</a>
             </div>
@@ -65,7 +65,7 @@
           <div class="card">
             <div class="card-block p-5">
               <h1 class="text-center">75 </h1>
-              <h3 class="text-center">Kelas</h3>
+              <h4 class="text-center">Sebaran</h4>
               <hr>
               <a href="#" class="btn btn-dark">Lebih Detail</a>
             </div>

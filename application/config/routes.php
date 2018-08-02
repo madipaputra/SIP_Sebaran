@@ -82,8 +82,9 @@ $route['dashboard']	=	'PageDashBoard/DashBoardPage';
 		$route['dashboard/akademik/manageDosen/Edit']		=	'manageDosen/ManageDosenEdit';
 
 		//Manage Matakuliah
-		$route['dashboard/akademik/manageMatkul']			=	'ManageMatkul/ManageMatkulPage';
-		$route['dashboard/akademik/manageMatkul/(:any)']	=	'ManageMatkul/ManageMatkulPage';
+		$route['dashboard/akademik/manageMatkul']			=	'ManageMatkul/ManageMatkulPage'; //Halaman List Matkul untuk setiap prodi
+		$route['dashboard/akademik/manageMatkulProdi']		=	'ManageMatkul/AKAManageMatkulProdiPage'; //Detail Matkul Untuk Prodi tertentu
+		$route['dashboard/akademik/manageMatkul/Add']		=	'ManageMatkul/ManageMatkulAdd';
 
 
 
