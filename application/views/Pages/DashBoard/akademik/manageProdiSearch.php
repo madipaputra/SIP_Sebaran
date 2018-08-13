@@ -17,7 +17,7 @@
             <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageMatkul">Matakuliah</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageKelas">Sebaran</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageSebaran">Sebaran</a>
           </li>
         </ul>
         <form class="form-inline m-0">
@@ -31,7 +31,8 @@
   <div class="p-5 bg-secondary">
         <div class="p-3 align-self-center col-md-12">
           <div class="card">
-            <h1 class="display-3 text-center">Manage Prodi</h1>
+            <a href="<?php echo(base_url())?>dashboard/akademik/manageProdi" class="btn btn-dark text-white">Kembali Ke Halaman Prodi</a>
+            <h4 class="display-4 text-center">Hasil Pencarian '{keywordData}'</h4>
             <div class="card-block p-3">
 
               <?php               

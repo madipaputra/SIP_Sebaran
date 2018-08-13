@@ -93,6 +93,9 @@ $route['dashboard/prodi']		=	'PageDashBoard/DashBoardPage';
 		$route['dashboard/akademik/manageMatkul/verifyMatkulProdi/VerifyNow'] = 'ManageMatkul/MatkulProdiVerifyNOW';
 		$route['dashboard/akademik/manageMatkul/verifyMatkulProdi/AbortNow'] = 'ManageMatkul/MatkulProdiAbortNOW';
 
+		//Manage Sebaran
+		$route['dashboard/akademik/manageSebaran'] =	'ManageSebaran/SebaranPage';
+
 
 
 

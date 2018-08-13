@@ -32,7 +32,7 @@ $querylistProdi = $this->db->get('tb_prodi');
             <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageMatkul">Matakuliah</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageKelas">Sebaran</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageSebaran">Sebaran</a>
           </li>
         </ul>
         <form class="form-inline m-0">
@@ -154,7 +154,7 @@ $querylistProdi = $this->db->get('tb_prodi');
               <h1 class="text-center">75 </h1>
               <h4 class="text-center">Sebaran</h4>
               <hr>
-              <a href="#" class="btn btn-dark">Lebih Detail</a>
+              <a href="<?php echo base_url()?>dashboard/akademik/manageSebaran" class="btn btn-dark">Lebih Detail</a>
             </div>
           </div>
         </div>

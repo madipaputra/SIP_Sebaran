@@ -14,10 +14,10 @@
             <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageDosen">Dosen</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="<?php echo base_url();?>dashboard/akademik/manageMatkul">Matakuliah</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageMatkul">Matakuliah</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageSebaran">Sebaran</a>
+            <a class="nav-link text-white" href="<?php echo base_url();?>dashboard/akademik/manageSebaran">Sebaran</a>
           </li>
         </ul>
         <form class="form-inline m-0">
@@ -33,19 +33,11 @@
                       <div class=" align-self-center col-md-12">
                         <div class="card">
                           <div class="card-block p-5">
-                            <h5 class="text-center"><b>Anda Berada Di Halaman List Matakuliah yang belum disetujui oleh Akademik berdasarkan Prodi</b></h5>
+                            <h5 class="text-center"><b>Anda Berada Di Halaman List Sebaran berdasarkan Prodi</b></h5>
                             <p class="text-center">
-                              <b>3</b> Prodi yang sudah tersimpan kedalam database<br>
-                              <b>0</b> Matakuliah yang sudah tersimpan kedalam database
+                              <b>0</b> Sebaran yang sudah tersimpan kedalam database
                             </p>
-                            <hr>
-                            <div align="center">
- 
 
-                            <a href="<?php echo base_url();?>dashboard/akademik/manageMatkul/verify" class="btn text-white btn-success">Menuju Halaman Persetujuan data Matakuliah yang duajukan Oleh Prodi</a>
-
-                            </div>
-                            <hr>
 
 <!-- 
                             <h5 class="text-center"><b>Cari Nama Prodi</b></h5>
@@ -79,8 +71,7 @@
                           <div class="card-block p-5">
                             <h5 class="text-center"><b>'.$row['nama_prodi'].'</b></h5>
                             <p class="text-center">
-                              <b>3</b> matakuliah sudah di setujui akademik<br>
-                              <b>0</b> matakuliah belum di setujui akademik
+                              <b>3</b> sebaran yang sudah tersimpan di database<br>
                             </p>
                             <hr>
                             <div align="center">
@@ -88,7 +79,7 @@
                               form_open(''.base_url().'dashboard/akademik/manageMatkulProdi')
                             .'
                             <input type="hidden" name="kodeProdiPOST" value="'.$row['kd_prodi'].'"/>
-                            <button type="submit" class="btn btn-dark">Manage Matkul Prodi ini</button>
+                            <button type="submit" class="btn btn-dark">Manage Sebaran Prodi ini</button>
                             '.
                               form_close()
                             .'
