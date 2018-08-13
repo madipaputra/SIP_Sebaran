@@ -33,33 +33,15 @@
                       <div class=" align-self-center col-md-12">
                         <div class="card">
                           <div class="card-block p-5">
-                            <h5 class="text-center"><b>Anda Berada Di Halaman List Matakuliah yang belum disetujui oleh Akademik berdasarkan Prodi</b></h5>
-                            <p class="text-center">
-                              <b>3</b> Prodi yang sudah tersimpan kedalam database<br>
-                              <b>0</b> Matakuliah yang sudah tersimpan kedalam database
-                            </p>
-                            <hr>
+                            <h5 class="text-center"><b>Halaman List Matakuliah yang akan disetujui.</b></h5>
+
                             <div align="center">
  
 
-                            <a href="<?php echo base_url();?>dashboard/akademik/manageMatkul/verify" class="btn text-white btn-success">Menuju Halaman Persetujuan data Matakuliah yang duajukan Oleh Prodi</a>
+                            <a href="<?php echo base_url();?>dashboard/akademik/manageMatkul" class="btn text-white btn-success">Kembali Ke Halaman Manage Matakuliah (List Prodi)</a>
 
                             </div>
-                            <hr>
 
-<!-- 
-                            <h5 class="text-center"><b>Cari Nama Prodi</b></h5>
-                            <hr>
-                            <div align="center">
-             <?php //echo form_open(base_url().'dashboard/akademik/manageProdi/Search');?>
-              <div class="input-group">
-                <input  type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian" name="keywordPOST">
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-                </div>
-              </div>
-            <?php //echo form_close();?>
-                            </div> -->
                           </div>
                         </div><br>    
                       </div> 
@@ -79,13 +61,12 @@
                           <div class="card-block p-5">
                             <h5 class="text-center"><b>'.$row['nama_prodi'].'</b></h5>
                             <p class="text-center">
-                              <b>3</b> matakuliah sudah di setujui akademik<br>
                               <b>0</b> matakuliah belum di setujui akademik
                             </p>
                             <hr>
                             <div align="center">
                             '.
-                              form_open(''.base_url().'dashboard/akademik/manageMatkulProdi')
+                              form_open(''.base_url().'dashboard/akademik/manageMatkul/verifyMatkulProdi')
                             .'
                             <input type="hidden" name="kodeProdiPOST" value="'.$row['kd_prodi'].'"/>
                             <button type="submit" class="btn btn-dark">Manage Matkul Prodi ini</button>

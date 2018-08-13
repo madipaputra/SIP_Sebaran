@@ -17,7 +17,7 @@
             <a class="nav-link text-white" href="<?php echo base_url();?>dashboard/akademik/manageMatkul">Matakuliah</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageKelas">Kelas</a>
+            <a class="nav-link" href="<?php echo base_url();?>dashboard/akademik/manageKelas">Sebaran</a>
           </li>
         </ul>
         <form class="form-inline m-0">
@@ -44,7 +44,7 @@
               <?php               
                 //validasi gagal
                 echo validation_errors('
-                <br><div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
                   <i class="fas fa-exclamation-triangle"></i> ', '
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -86,20 +86,21 @@
   <?php echo form_open(base_url().'dashboard/akademik/manageMatkul/Add');?>
     <div class="form-row">
       <div class="form-group col-md-2">
+        <input type="hidden" name="kodeProdiPOST" value="<?php echo $rowProdi['kd_prodi']?>"/>
         <label for="inputEmail4">Kode Matakuliah</label>
-        <input name="kd_matkulPOST" type="email" class="form-control" id="inputEmail4" placeholder="Masukkan Kode">
+        <input name="kd_matkulPOST" type="text" class="form-control" placeholder="Masukkan Kode">
       </div>
       <div class="form-group col-md-6">
         <label for="inputPassword4">Nama Matakuliah</label>
-        <input name="nama_matkulPOST" type="password" class="form-control" id="inputPassword4" placeholder="Masukkan Nama Matakuliah">
+        <input name="nama_matkulPOST" type="text" class="form-control" placeholder="Masukkan Nama Matakuliah">
       </div>
       <div class="form-group col-md-2">
         <label for="inputEmail4">SKS Teori</label>
-        <input name="sks_teoriPOST" type="number" class="form-control" id="inputEmail4" placeholder="Jumlah SKS Teori">
+        <input name="sks_teoriPOST" type="number" class="form-control" placeholder="Jumlah SKS Teori">
       </div>
       <div class="form-group col-md-2">
         <label for="inputEmail4">SKS Praktek</label>
-        <input name="sks_praktekPOST" type="number" class="form-control" id="inputEmail4" placeholder="Jumlah SKS Praktek">
+        <input name="sks_praktekPOST" type="number" class="form-control" placeholder="Jumlah SKS Praktek">
       </div>
     </div>
 
@@ -163,7 +164,7 @@
 
                 <tbody>
                 <?php
-                $query = $this->db->get('tb_matakuliah');
+                $query = $this->db->get_where('tb_matakuliah', array('kd_prodi'=>$nama_prodi));
 
                   foreach ($query->result_array() as $row)
                   {
@@ -171,78 +172,17 @@
                           
                           echo '
                             <tr>
-                              <td>'.$row['kd_prodi'].'</td>
-                              <td>'.$row['nama_prodi'].'</td>
+                              <td>'.$row['kd_matkul'].'</td>
+                              <td>'.$row['nama_matkul'].'</td>
+                              <td>'.$row['sks_teori'].'</td>
+                              <td>'.$row['sks_praktek'].'</td>
+                              <td>'.$row['status'].'</td>
                               <td align="center">
-                                <button data-toggle="modal" data-target="#editData'.$row['kd_prodi'].'" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                                <button data-toggle="modal" data-target="#editData'.$row['kd_matkul'].'" class="btn btn-warning"><i class="fas fa-edit"></i></button>
 
-                                <button data-toggle="modal" data-target="#deleteData'.$row['kd_prodi'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button data-toggle="modal" data-target="#deleteData'.$row['kd_matkul'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
 
                               </td>
-
-<!-- Modal Edit Data '.$row['nama_prodi'] .'-->
-<div class="modal fade" id="editData'.$row['kd_prodi'].'" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <form action="'.base_url().'dashboard/akademik/manageProdi/Edit" method="post">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Form Edit Data Prodi<br>
-        <b>'.$row['nama_prodi'].'</b></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-body">
-                      <div class="form-group">
-                        <input name="idPOST" type="hidden" value="'.$row['id_prodi'].'" />
-                        <label>Kode Prodi</label>
-                        <input name="kd_prodiPOST" type="text" class="form-control form-control-sm" value="'.$row['kd_prodi'].'">
-                        <small class="form-text text-muted">Masukkan 3 digit huruf inisial Program Studi</small>
-                      </div>
-                      <div class="form-group">
-                        <label>Nama Prodi</label>
-                        <input type="text" class="form-control form-control-sm" value="'.$row['nama_prodi'].'" name="nama_prodiPOST"> </div>
-
-                    
-      </div>
-
-      <div class="modal-footer">
-        <button type="reset" class="btn btn-info"><i class="fas fa-undo"></i> Reset</button>
-        <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Perbarui</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Hapus Data '.$row['nama_prodi'] .'-->
-<div class="modal fade" id="deleteData'.$row['kd_prodi'].'" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <form action="'.base_url().'dashboard/akademik/manageProdi/Delete" method="post">
-        <input name="idPOST" type="hidden" value="'.$row['id_prodi'].'" />
-        <input name="nama_prodiPOST" type="hidden" value="'.$row['nama_prodi'] .'" />
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Hapus data prodi<br>
-        <b> '.$row['nama_prodi'].'</b></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <p> Yakin ingin menghapus data ini?
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-info" data-dismiss="modal">Batal</button>
-        <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Hapus</button>
-      </div>
-      </form>
-    </div>
-  </div>
-</div>
 
                             </tr>
 

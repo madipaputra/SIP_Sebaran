@@ -62,7 +62,9 @@ $route['Daftar'] 							= 'sip_sebaran/registerPage';
 $route['Daftar/prosesDaftar'] 				= 'AkunController/doRsegister'; 
 
 //Controller Dashboard Prodi atau Akademik
-$route['dashboard']	=	'PageDashBoard/DashBoardPage';
+$route['dashboard']				=	'PageDashBoard/DashBoardPage';
+$route['dashboard/akademik']	=	'PageDashBoard/DashBoardPage';
+$route['dashboard/prodi']		=	'PageDashBoard/DashBoardPage';
 
 	// Controller Manage Data (Prodi)
 	$route['dashboard/prodi/manageProdi']				=	'PageDashBoard/ManageProdiPage';
@@ -82,9 +84,14 @@ $route['dashboard']	=	'PageDashBoard/DashBoardPage';
 		$route['dashboard/akademik/manageDosen/Edit']		=	'manageDosen/ManageDosenEdit';
 
 		//Manage Matakuliah
-		$route['dashboard/akademik/manageMatkul']			=	'ManageMatkul/ManageMatkulPage'; //Halaman List Matkul untuk setiap prodi
-		$route['dashboard/akademik/manageMatkulProdi']		=	'ManageMatkul/AKAManageMatkulProdiPage'; //Detail Matkul Untuk Prodi tertentu
-		$route['dashboard/akademik/manageMatkul/Add']		=	'ManageMatkul/ManageMatkulAdd';
+		$route['dashboard/akademik/manageMatkul']					=	'ManageMatkul/ManageMatkulPage'; //Halaman List Matkul untuk setiap prodi
+		$route['dashboard/akademik/manageMatkulProdi']				=	'ManageMatkul/AKAManageMatkulProdiPage'; //Detail Matkul Untuk Prodi tertentu
+		$route['dashboard/akademik/manageMatkul/Add']				=	'ManageMatkul/ManageMatkulAdd';
+
+		$route['dashboard/akademik/manageMatkul/verify']			=	'ManageMatkul/ManageMatkulVerifyPage';
+		$route['dashboard/akademik/manageMatkul/verifyMatkulProdi']	=	'ManageMatkul/MatkulProdiVerifyPage';
+		$route['dashboard/akademik/manageMatkul/verifyMatkulProdi/VerifyNow'] = 'ManageMatkul/MatkulProdiVerifyNOW';
+		$route['dashboard/akademik/manageMatkul/verifyMatkulProdi/AbortNow'] = 'ManageMatkul/MatkulProdiAbortNOW';
 
 
 
