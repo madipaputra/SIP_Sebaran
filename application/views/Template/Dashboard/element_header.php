@@ -7,13 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<?php echo base_url();?>/external/theme.css" type="text/css"> 
   <link rel="stylesheet" href="<?php echo base_url();?>external/font-awesome/css/all.css" type="text/css"> 
+  <link rel="stylesheet" href="<?php echo base_url();?>external/selectize-bootstrap-4/css/selectize.bootstrap4.css" type="text/css"> 
 
-  <link rel="stylesheet" href="<?php echo base_url();?>/external/select2/css/select2.min.css" type="text/css"> 
-  <link rel="stylesheet" href="<?php echo base_url();?>/external/select2-bootstrap4/dist/select2-bootstrap4.min.css" type="text/css"> 
-  <link rel="stylesheet" href="<?php echo base_url();?>/external/contextmenu/class2context.css">
 
   </head>
 <body>
+
+
+  <script src="<?php echo base_url()?>external/jquery/jquery-3.3.1.min.js"></script>
+  <script src="<?php echo base_url()?>external/selectize-bootstrap-4/js/selectize/standalone/selectize.min.js"></script>
 
 
 

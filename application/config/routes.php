@@ -95,6 +95,7 @@ $route['dashboard/prodi']		=	'PageDashBoard/DashBoardPage';
 
 		//Manage Sebaran
 		$route['dashboard/akademik/manageSebaran'] =	'ManageSebaran/SebaranPage';
+		$route['dashboard/akademik/manageSebaranProdi'] = 'ManageSebaran/AKASebaranProdiPage';
 
 
 

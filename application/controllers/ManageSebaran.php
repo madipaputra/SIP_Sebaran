@@ -193,4 +193,195 @@ class ManageSebaran extends CI_Controller
 			}
 	}
 
+	public function AKASebaranProdiPage()
+	{
+		if ($this->input->post('kodeProdiPOST')	== NULL) 
+		{
+			redirect(base_url().'dashboard/akademik/manageSebaran');
+		}
+			$nama_prodi	=	$this->input->post('kodeProdiPOST');
+			switch ($this->input->post('kodeProdiPOST')) {
+			    case "AK":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Akuntansi',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "KA":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Komputerisasi Akuntansi',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "KB":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Konstruksi Bangunan',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "MID":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "MK":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain / Mekatronik',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "AB":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'MO / Alat Berat',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "MO":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'MO / Mekanik Otomotif',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "RM":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Rekam Medik & Informasi Kesehatan',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "ALL":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Seluruh Prodi',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "TE":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Teknik Elektronika',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "IF":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Teknik Informatika',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+			    $this->parserTemplate($element_header);
+			        break;
+
+			    case "KIM":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Teknik Kimia',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "TK":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Teknik Komputer',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "TM":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Teknik Mesin',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			    case "TO":
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Manage Sebaran',
+				        'inisialisasiKodeAkun'	=>	'Teknik Otomasi',
+				        'nama_prodi'			=>	$nama_prodi,
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageSebaranProdi',
+						'pesan'					=>	''
+				);
+				$this->parserTemplate($element_header);
+			        break;
+
+			}		
+	}
+
 }

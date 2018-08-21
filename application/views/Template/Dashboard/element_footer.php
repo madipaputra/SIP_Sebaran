@@ -10,20 +10,6 @@
     </div>
   </div>
 
-
-
-  <script src="<?php echo base_url()?>external/jquery/jquery-3.3.1.min.js"></script>
-  <script src="<?php echo base_url()?>external/select2/js/select2.min.js"></script>
-
-
-
-<!-- <script type="text/javascript">
-// In your Javascript (external .js resource or <script> tag)
-$(document).ready(function() {
-    $('.demoAutoComplete').select2();
-});
-</script> -->
-
   <script src="<?php echo base_url()?>external/propper/popper.min.js"></script>
   <script src="<?php echo base_url()?>external/bootstrap/bootstrap.min.js"></script>
 

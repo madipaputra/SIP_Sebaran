@@ -76,7 +76,7 @@
                             <hr>
                             <div align="center">
                             '.
-                              form_open(''.base_url().'dashboard/akademik/manageMatkulProdi')
+                              form_open(''.base_url().'dashboard/akademik/manageSebaranProdi')
                             .'
                             <input type="hidden" name="kodeProdiPOST" value="'.$row['kd_prodi'].'"/>
                             <button type="submit" class="btn btn-dark">Manage Sebaran Prodi ini</button>
