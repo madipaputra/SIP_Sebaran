@@ -68,6 +68,11 @@ class MatkulModel extends CI_Model
 		$this->db->replace('tb_matakuliah', $data);
 	}
 
+	public function deleteMatkul($element_header)
+	{
+		$this->db->delete('tb_matakuliah', array('id_matkul' => $element_header['id_matkul']));
+	}
+
 }
 
 ?>

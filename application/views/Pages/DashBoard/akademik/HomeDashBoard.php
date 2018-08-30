@@ -1,20 +1,19 @@
-              <?php
+<?php
 $queryGetProdi  = $this->db->query('SELECT * FROM tb_prodi');
 $queryGetDosen  = $this->db->query('SELECT * FROM tb_dosen');
 $queryGetMatkul = $this->db->query('SELECT * FROM tb_matakuliah');
 
-$queryGetMatkulProdiMK = $this->db->query('SELECT * FROM tb_matakuliah where kd_prodi="MK"');
 
 $queryJumlahProdi   = $queryGetProdi->num_rows();
 $queryJumlahDosen   = $queryGetDosen->num_rows();
 $queryJumlahMatkul  = $queryGetMatkul->num_rows();
 
 $querylistProdi = $this->db->get('tb_prodi');
-
-              ?>
+?>
 
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
+      <img src="<?php echo base_url();?>external/logo/logo.png" width=40 height=40>
       <a class="navbar-brand" href="<?php echo base_url();?>dashboard"><b>Dashboard <br>
         <small>{inisialisasiKodeAkun}</b></small></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -37,7 +36,7 @@ $querylistProdi = $this->db->get('tb_prodi');
         </ul>
         <form class="form-inline m-0">
           <a href="<?php echo base_url();?>logout" class="btn btn-danger text-light" type="submit">
-            <b>Logout</b>
+            <b><i class="fas fa-sign-out-alt"></i> Logout</b>
           </a>
         </form>
       </div>

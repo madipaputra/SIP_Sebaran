@@ -44,7 +44,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Akuntansi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -54,7 +56,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Komputerisasi Akuntansi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -64,7 +68,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Konstruksi Bangunan',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -74,7 +80,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -84,7 +92,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain / Mekatronik',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -94,7 +104,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'MO / Alat Berat',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -104,7 +116,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'MO / Mekanik Otomotif',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -114,7 +128,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Rekam Medik & Informasi Kesehatan',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -124,7 +140,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Seluruh Prodi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -134,7 +152,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Teknik Elektronika',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -144,7 +164,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Teknik Informatika',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 			    $this->parserTemplate($element_header);
 			        break;
@@ -154,7 +176,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Teknik Kimia',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -164,7 +188,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Teknik Komputer',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -174,7 +200,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Teknik Mesin',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -184,7 +212,9 @@ class ManageMatkul extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'List Manage Matakuliah',
 				        'inisialisasiKodeAkun'	=>	'Teknik Otomasi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageMatkul',
+						'nama_prodi'			=> 	$this->session->kd_akun,
+						'pesan'					=>	''
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -424,7 +454,7 @@ class ManageMatkul extends CI_Controller
 	                $this->MatkulModel->insertMatkul();
 	                $element_header['pesan'] = '
 	                  <div class="alert alert-success alert-dismissible fade show" role="alert">
-	                  Data Dosen Berhasil Ditambahkan ke dalam Database
+	                  <i class="fas fa-check-circle"></i> Data Matakuliah Berhasil Ditambahkan ke dalam Database
 	                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	                      <span aria-hidden="true">&times;</span>
 	                    </button>
@@ -867,6 +897,312 @@ class ManageMatkul extends CI_Controller
 						$this->parserTemplate($element_header);
 				}		
 	}
+
+		function logikaPencarian($element_header)
+		{
+		        $this->form_validation->set_rules('keywordPOST', 'Kata Kunci Pencarian', 
+			          'required', array('required' => 'Kata Kunci Harus Diisi')
+			        );
+
+			        $this->form_validation->set_rules('fieldPOST', 'Field Table',
+			          'required', array('required' => 'Anda Harus Memilih salah satu pilihan Pencarian Berdasarkan')
+			        );
+
+		            //Logika Form Validation
+		              if ($this->form_validation->run() == FALSE)
+		              {
+		              	redirect(base_url().'dashboard/prodi/manageMatkul/');
+		              }
+		              else
+		              {
+		              	$this->parserTemplate($element_header);
+		              }
+		}
+
+		public function ManageMatkulSearch()
+		{
+
+			switch ($this->session->kd_akun) {
+			    case "AKA":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Akademik',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'kd_prodiPOST'			=> $this->input->post('kd_prodiPOST'),
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);	
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "AK":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Akuntansi',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "KA":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Komputerisasi Akuntansi',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "KB":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Konstruksi Bangunan',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "MID":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "MK":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain / Mekatronik',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "AB":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'MO / Alat Berat',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "MO":
+
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'MO / Mekanik Otomotif',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "RM":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Rekam Medik & Informasi Kesehatan',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "ALL":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Seluruh Prodi',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "TE":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Teknik Elektronika',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "IF":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Teknik Informatika',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "KIM":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Teknik Kimia',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "TK":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Teknik Komputer',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "TM":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Teknik Mesin',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			    case "TO":
+
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Matakuliah',
+				        'inisialisasiKodeAkun'	=>	'Teknik Otomasi',
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/ManageMatkulSearch',
+						'pesan'					=>	'',
+						'kd_prodi'				=> 	$this->session->kd_akun,
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+				$this->logikaPencarian($element_header);
+			        break;
+
+			}
+
+		}
+
+		public function ManageMatkulDelete()
+		{
+
+				if ($this->input->post('idPOST') == "") 
+				{
+					$element_header	=	array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Dosen (Delete)',
+				        'inisialisasiKodeAkun'	=>	'(Akademik)',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageMatkul',
+						'pesan'		=>	'');
+					$this->parserTemplate($element_header);
+				}
+				else
+				{
+					$element_header	=	array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Dosen Delete',
+				        'inisialisasiKodeAkun'	=>	'(Akademik)',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageMatkul',
+						'id_matkul'	=> $this->input->post('idPOST'),
+						'pesan'		=>	'
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+	            	<i class="fas fa-check-circle"></i> Data Matakuliah <b>'.$this->input->post('nama_dosenPOST').'</b> Berhasil Dihapus dari Database
+	            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+	            	<span aria-hidden="true">&times;</span>
+	            	</button>
+	            </div>
+						');
+					$this->MatkulModel->deleteMatkul($element_header);
+					$this->parserTemplate($element_header);
+				}
+		}
+
 }
 
 ?>

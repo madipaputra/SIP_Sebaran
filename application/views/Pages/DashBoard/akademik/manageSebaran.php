@@ -1,5 +1,6 @@
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
+      <img src="<?php echo base_url();?>external/logo/logo.png" width=40 height=40>
       <a class="navbar-brand" href="<?php echo base_url();?>dashboard">Dashboard <br>
         <small>{inisialisasiKodeAkun}</small></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -22,7 +23,7 @@
         </ul>
         <form class="form-inline m-0">
           <a href="<?php echo base_url();?>logout" class="btn btn-danger text-light" type="submit">
-            <b>Logout</b>
+            <b><i class="fas fa-sign-out-alt"></i> Logout</b>
           </a>
         </form>
       </div>
@@ -33,7 +34,10 @@
                       <div class=" align-self-center col-md-12">
                         <div class="card">
                           <div class="card-block p-5">
-                            <h5 class="text-center"><b>Anda Berada Di Halaman List Sebaran berdasarkan Prodi</b></h5>
+                            <h5 class="text-center">
+                              {pesan}
+                              <b>Anda Berada Di Halaman List Sebaran berdasarkan Prodi</b></h5>
+                              }
                             <p class="text-center">
                               <b>0</b> Sebaran yang sudah tersimpan kedalam database
                             </p>

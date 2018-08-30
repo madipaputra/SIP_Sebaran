@@ -51,7 +51,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Akuntansi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -63,7 +64,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Komputerisasi Akuntansi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -75,7 +77,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Konstruksi Bangunan',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -87,7 +90,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -99,7 +103,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain / Mekatronik',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -111,7 +116,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'MO / Alat Berat',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -123,7 +129,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'MO / Mekanik Otomotif',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -135,7 +142,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Rekam Medik & Informasi Kesehatan',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -147,7 +155,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Seluruh Prodi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -159,7 +168,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Teknik Elektronika',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -171,7 +181,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Teknik Informatika',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -183,7 +194,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Teknik Kimia',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -195,7 +207,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Teknik Komputer',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -207,7 +220,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Teknik Mesin',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);
@@ -219,7 +233,8 @@ class PageDashBoard extends CI_Controller
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
 				        'webBagian'				=>	'Dashboard Prodi',
 				        'inisialisasiKodeAkun'	=>	'Teknik Otomasi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
+						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard',
+						'kode_prodi'			=>	$this->session->kd_akun
 				);
 
 				$this->parser->parse('Template/Dashboard/element_header', $element_header);

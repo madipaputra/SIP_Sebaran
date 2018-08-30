@@ -4,6 +4,7 @@
   -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
+      <img src="<?php echo base_url();?>external/logo/logo.png" width=40 height=40>
       <a class="navbar-brand" href="<?php echo base_url();?>">Sistem Informasi Pengajuan Matakuliah</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>

@@ -1,5 +1,18 @@
+<?php
+$queryGetProdi  = $this->db->query('SELECT * FROM tb_prodi');
+$queryGetDosen  = $this->db->query('SELECT * FROM tb_dosen');
+$queryGetMatkul = $this->db->query('SELECT * FROM tb_matakuliah');
+
+$queryJumlahProdi   = $queryGetProdi->num_rows();
+$queryJumlahDosen   = $queryGetDosen->num_rows();
+$queryJumlahMatkul  = $queryGetMatkul->num_rows();
+
+$querylistProdi = $this->db->get('tb_prodi');
+?>
+
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
+      <img src="<?php echo base_url();?>external/logo/logo.png" width=40 height=40>
       <a class="navbar-brand" href="<?php echo base_url();?>dashboard">Dashboard <br>
         <small>{inisialisasiKodeAkun}</small></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -22,7 +35,7 @@
         </ul>
         <form class="form-inline m-0">
           <a href="<?php echo base_url();?>logout" class="btn btn-danger text-light" type="submit">
-            <b>Logout</b>
+            <b><i class="fas fa-sign-out-alt"></i> Logout</b>
           </a>
         </form>
       </div>
@@ -35,9 +48,15 @@
                           <div class="card-block p-5">
                             <h5 class="text-center"><b>Halaman List Matakuliah yang akan disetujui.</b></h5>
 
+                           <p align="center"> Data Matakuliah didapatkan dari file excel Sebaran Tahun Akademik <b>2017/2018</b><br><br>
+                            <a href="<?php echo base_url()?>database/2017.2%20SEBARAN%20DAN%20JADWAL%20-ALLPRODI%20-%20Copy.xls" class="btn btn-primary text-white"> <i class="fas fa-download"></i> Download File Excel Sebaran</a>
+
+                            <p class="text-center">
+
                             <div align="center">
  
-
+                              <b><?php echo $queryJumlahMatkul; ?></b> Matakuliah yang sudah tersimpan kedalam database
+                            </p>
                             <a href="<?php echo base_url();?>dashboard/akademik/manageMatkul" class="btn text-white btn-success">Kembali Ke Halaman Manage Matakuliah (List Prodi)</a>
 
                             </div>

@@ -1,54 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/*
-| -------------------------------------------------------------------------
-| URI ROUTING
-| -------------------------------------------------------------------------
-| This file lets you re-map URI requests to specific controller functions.
-|
-| Typically there is a one-to-one relationship between a URL string
-| and its corresponding controller class/method. The segments in a
-| URL normally follow this pattern:
-|
-|	example.com/class/method/id/
-|
-| In some instances, however, you may want to remap this relationship
-| so that a different class/function is called than the one
-| corresponding to the URL.
-|
-| Please see the user guide for complete details:
-|
-|	https://codeigniter.com/user_guide/general/routing.html
-|
-| -------------------------------------------------------------------------
-| RESERVED ROUTES
-| -------------------------------------------------------------------------
-|
-| There are three reserved routes:
-|
-|	$route['default_controller'] = 'welcome';
-|
-| This route indicates which controller class should be loaded if the
-| URI contains no data. In the above example, the "welcome" class
-| would be loaded.
-|
-|	$route['404_override'] = 'errors/page_missing';
-|
-| This route will tell the Router which controller/method to use if those
-| provided in the URL cannot be matched to a valid route.
-|
-|	$route['translate_uri_dashes'] = FALSE;
-|
-| This is not exactly a route, but allows you to automatically route
-| controller and method names that contain dashes. '-' isn't a valid
-| class or method name character, so it requires translation.
-| When you set this option to TRUE, it will replace ALL dashes in the
-| controller and method URI segments.
-|
-| Examples:	my-controller/index	-> my_controller/index
-|		my-controller/my-method	-> my_controller/my_method
-*/
 
 //Default Controller. Controller Utama
 $route['default_controller']	=	'sip_sebaran/loginPage';
@@ -82,27 +34,33 @@ $route['dashboard/prodi']		=	'PageDashBoard/DashBoardPage';
 		$route['dashboard/akademik/manageDosen/Add']		=	'ManageDosen/ManageDosenAdd';
 		$route['dashboard/akademik/manageDosen/Delete']		=	'ManageDosen/ManageDosenDelete';
 		$route['dashboard/akademik/manageDosen/Edit']		=	'manageDosen/ManageDosenEdit';
+		$route['dashboard/akademik/manageDosen/Search']		=	'manageDosen/ManageDosenSearch';
 
 		//Manage Matakuliah
 		$route['dashboard/akademik/manageMatkul']					=	'ManageMatkul/ManageMatkulPage'; //Halaman List Matkul untuk setiap prodi
 		$route['dashboard/akademik/manageMatkulProdi']				=	'ManageMatkul/AKAManageMatkulProdiPage'; //Detail Matkul Untuk Prodi tertentu
 		$route['dashboard/akademik/manageMatkul/Add']				=	'ManageMatkul/ManageMatkulAdd';
+		$route['dashboard/akademik/manageMatkul/Delete']			=	'ManageMatkul/ManageMatkulDelete';
 
 		$route['dashboard/akademik/manageMatkul/verify']			=	'ManageMatkul/ManageMatkulVerifyPage';
 		$route['dashboard/akademik/manageMatkul/verifyMatkulProdi']	=	'ManageMatkul/MatkulProdiVerifyPage';
 		$route['dashboard/akademik/manageMatkul/verifyMatkulProdi/VerifyNow'] = 'ManageMatkul/MatkulProdiVerifyNOW';
 		$route['dashboard/akademik/manageMatkul/verifyMatkulProdi/AbortNow'] = 'ManageMatkul/MatkulProdiAbortNOW';
 
+		$route['dashboard/akademik/manageMatkul/Search'] = 'ManageMatkul/ManageMatkulSearch';
+
 		//Manage Sebaran
 		$route['dashboard/akademik/manageSebaran'] =	'ManageSebaran/SebaranPage';
 		$route['dashboard/akademik/manageSebaranProdi'] = 'ManageSebaran/AKASebaranProdiPage';
+		$route['dashboard/akademik/manageSebaran/AddPreview'] = 'ManageSebaran/AKASebaranPagePrev';
+		$route['dashboard/akademik/manageSebaran/Add']	=	'ManageSebaran/AddSebaran';
+
+	// Controller Manage Data (prodi)
+		//manage matakuliah
+		$route['dashboard/prodi/manageMatkul']			=	'ManageMatkul/ManageMatkulPage';
+		$route['dashboard/prodi/manageMatkul/Search']	=	'ManageMatkul/ManageMatkulSearch';
+		$route['dashboard/prodi/manageSebaran'] =	'ManageSebaran/PRODISebaranProdiPage';
 
 
-
-
-	//$route['AKDashboard'] = 'sip_sebaran/akademikDashboard';
-  	//$route['AKDashboard/listDemo'] = 'sip_sebaran/listDemo';
-	//$route['PDDashboard'] = 'sip_sebaran/prodiDashboard';
-		
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

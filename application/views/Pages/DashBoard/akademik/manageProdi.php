@@ -1,5 +1,13 @@
+<?php
+$queryGetProdi  = $this->db->query('SELECT * FROM tb_prodi');
+
+
+$queryJumlahProdi   = $queryGetProdi->num_rows();
+
+?>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
+      <img src="<?php echo base_url();?>external/logo/logo.png" width=40 height=40>
       <a class="navbar-brand" href="<?php echo base_url();?>dashboard">Dashboard <br>
         <small><b>{inisialisasiKodeAkun}</b></small></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -22,7 +30,7 @@
         </ul>
         <form class="form-inline m-0">
           <a href="<?php echo base_url();?>logout" class="btn btn-danger text-light" type="submit">
-            <b>Logout</b>
+            <b><i class="fas fa-sign-out-alt"></i> Logout</b>
           </a>
         </form>
       </div>
@@ -31,7 +39,15 @@
   <div class="p-5 bg-secondary">
         <div class="p-3 align-self-center col-md-12">
           <div class="card">
-            <h1 class="display-3 text-center">Manage Prodi</h1>
+            <h1 class="display-3 text-center">Halaman Prodi</h1>
+            <p align="center"> Data Prodi didapatkan dari file excel Sebaran Tahun Akademik <b>2017/2018</b><br><br>
+                            <a href="<?php echo base_url()?>database/2017.2%20SEBARAN%20DAN%20JADWAL%20-ALLPRODI%20-%20Copy.xls" class="btn btn-primary text-white"> <i class="fas fa-download"></i> Download File Excel Sebaran</a>
+
+                            <p class="text-center">
+                              <b><?php echo $queryJumlahProdi; ?></b> Program Studi yang sudah tersimpan kedalam database
+                            </p>
+                            <div align="center">
+
             <div class="card-block p-3">
 
               <?php               
@@ -54,7 +70,7 @@
               <div class="input-group">
                 <div class="input-group-append">
                   <button type="button" data-toggle="modal" data-target="#add" class="btn btn-dark">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus"></i> Tambah
                   </button>
                 </div>
                 <input  type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian" name="keywordPOST">
@@ -64,7 +80,7 @@
                   <option value="nama_prodi">Nama Prodi</option>
                 </select>
                 <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                  <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i> Cari</button>
                 </div>
               </div>
             <?php echo form_close();?>
@@ -128,10 +144,10 @@
                             <tr>
                               <td>'.$row['kd_prodi'].'</td>
                               <td>'.$row['nama_prodi'].'</td>
-                              <td align="center">
-                                <button data-toggle="modal" data-target="#editData'.$row['kd_prodi'].'" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                              <td align="right">
+                                <button data-toggle="modal" data-target="#editData'.$row['kd_prodi'].'" class="btn btn-warning"><i class="fas fa-edit"></i> Edit</button>
 
-                                <button data-toggle="modal" data-target="#deleteData'.$row['kd_prodi'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button data-toggle="modal" data-target="#deleteData'.$row['kd_prodi'].'" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Hapus</button>
 
                               </td>
 

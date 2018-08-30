@@ -1,5 +1,18 @@
+<?php
+$queryGetProdi  = $this->db->query('SELECT * FROM tb_prodi');
+$queryGetDosen  = $this->db->query('SELECT * FROM tb_dosen');
+$queryGetMatkul = $this->db->query('SELECT * FROM tb_matakuliah');
+
+$queryJumlahProdi   = $queryGetProdi->num_rows();
+$queryJumlahDosen   = $queryGetDosen->num_rows();
+$queryJumlahMatkul  = $queryGetMatkul->num_rows();
+
+$querylistProdi = $this->db->get('tb_prodi');
+?>
+
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
+      <img src="<?php echo base_url();?>external/logo/logo.png" width=40 height=40>
       <a class="navbar-brand" href="<?php echo base_url();?>dashboard">Dashboard <br>
         <small>{inisialisasiKodeAkun}</small></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -22,7 +35,7 @@
         </ul>
         <form class="form-inline m-0">
           <a href="<?php echo base_url();?>logout" class="btn btn-danger text-light" type="submit">
-            <b>Logout</b>
+            <b><i class="fas fa-sign-out-alt"></i> Logout</b>
           </a>
         </form>
       </div>
@@ -33,12 +46,18 @@
                       <div class=" align-self-center col-md-12">
                         <div class="card">
                           <div class="card-block p-5">
+                            {pesan}
                             <h5 class="text-center"><b>Anda Berada Di Halaman List Matakuliah yang belum disetujui oleh Akademik berdasarkan Prodi</b></h5>
+
+                           <p align="center"> 
+                            Pada Halaman Matakuliah, Hanya Ditampilkan daftar Matakuliah yang disetujui saja!<br>
+                            Data Matakuliah didapatkan dari file excel Sebaran Tahun Akademik <b>2017/2018</b><br>
+                            <br>
+                            <a href="<?php echo base_url()?>database/2017.2%20SEBARAN%20DAN%20JADWAL%20-ALLPRODI%20-%20Copy.xls" class="btn btn-primary text-white"> <i class="fas fa-download"></i> Download File Excel Sebaran</a>
+
                             <p class="text-center">
-                              <b>3</b> Prodi yang sudah tersimpan kedalam database<br>
-                              <b>0</b> Matakuliah yang sudah tersimpan kedalam database
+                              <b><?php echo $queryJumlahMatkul; ?></b> Matakuliah yang sudah tersimpan kedalam database
                             </p>
-                            <hr>
                             <div align="center">
  
 
@@ -72,16 +91,31 @@
 
                   foreach ($query->result_array() as $row)
                   {
-                    
+                     $queryJumlahMatkulPerProdi = $this->db->query('SELECT * FROM tb_matakuliah where kd_prodi="'.$row['kd_prodi'].'"');
+                    $queryJumlahMatkulPerProdiDisetujui = $this->db->query('SELECT * FROM tb_matakuliah where status="1" AND kd_prodi="'.$row['kd_prodi'].'"');
+                    $queryJumlahMatkulPerProdiDitolak = $this->db->query('SELECT * FROM tb_matakuliah where status="0" AND kd_prodi="'.$row['kd_prodi'].'"');
+
+                    $JumlahMatkulProdiPerbagian  = $queryJumlahMatkulPerProdi->num_rows();
+                    $JumlahMatkulProdiDisetujui  = $queryJumlahMatkulPerProdiDisetujui->num_rows();
+                    $JumlahMatkulProdiDitolak  = $queryJumlahMatkulPerProdiDitolak->num_rows();
+
                     echo '
                       <div class=" align-self-center col-md-6">
                         <div class="card">
                           <div class="card-block p-5">
                             <h5 class="text-center"><b>'.$row['nama_prodi'].'</b></h5>
-                            <p class="text-center">
-                              <b>3</b> matakuliah sudah di setujui akademik<br>
-                              <b>0</b> matakuliah belum di setujui akademik
-                            </p>
+                            <table class="table">
+                              <tr>
+                                <td><b>Total</b></td>
+                                <td align=center><b>Disetujui</b></td>
+                                <td align=right><b>Belum Disetujui</b></td>
+                              </tr>
+                              <tr>
+                                <td>'.$JumlahMatkulProdiPerbagian.'</td>
+                                <td align=center>'.$JumlahMatkulProdiDisetujui.'</td>
+                                <td align=right>'.$JumlahMatkulProdiDitolak.'</td>
+                              </tr>
+                            </table>
                             <hr>
                             <div align="center">
                             '.

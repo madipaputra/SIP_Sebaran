@@ -1,5 +1,6 @@
   <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <div class="container">
+      <img src="<?php echo base_url();?>external/logo/logo.png" width=40 height=40>
       <a class="navbar-brand" href="<?php echo base_url();?>dashboard">Dashboard <br>
         <small><b>Akademik</b></small></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -22,7 +23,7 @@
         </ul>
         <form class="form-inline m-0">
           <a href="<?php echo base_url();?>logout" class="btn btn-danger text-light" type="submit">
-            <b>Logout</b>
+            <b><i class="fas fa-sign-out-alt"></i> Logout</b>
           </a>
         </form>
       </div>
@@ -53,20 +54,6 @@
                 </div>');
               ?>
                 {pesan}
-
-             <?php echo form_open(base_url().'dashboard/akademik/manageProdi/Search');?>
-              <div class="input-group">
-                <input  type="text" class="form-control" placeholder="Ketik Kata Kunci Pencarian" name="keywordPOST">
-                <select name="fieldPOST" class="form-control">
-                  <option value="">Pencarian Berdasarkan</option>
-                  <option value="nama_prodi">Nama Matakuliah</option>
-                </select>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
-                </div>
-              </div>
-
-            <?php echo form_close();?>
 
               <table class="table">
                 <thead>

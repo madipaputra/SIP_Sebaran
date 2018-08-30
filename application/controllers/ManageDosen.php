@@ -20,6 +20,26 @@ class ManageDosen extends CI_Controller
 		}
 	}
 
+		function logikaPencarian($element_header)
+		{
+		        $this->form_validation->set_rules('keywordPOST', 'Kata Kunci Pencarian', 
+			          'required', array('required' => 'Kata Kunci Harus Diisi')
+			        );
+
+			        $this->form_validation->set_rules('fieldPOST', 'Field Table',
+			          'required', array('required' => 'Anda Harus Memilih salah satu pilihan Pencarian Berdasarkan')
+			        );
+
+		            //Logika Form Validation
+		              if ($this->form_validation->run() == FALSE)
+		              {
+		              	redirect(base_url().'dashboard/akademik/manageDosen/');
+		              }
+		              else
+		              {
+		              	$this->parserTemplate($element_header);
+		              }
+		}
 
 		function parserTemplate($element_header)
 		{
@@ -33,160 +53,10 @@ class ManageDosen extends CI_Controller
 			    case "AKA":
 				$element_header = array(
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
+				        'webBagian'				=>	'Halaman Dosen',
 				        'inisialisasiKodeAkun'	=>	'Akademik',
 						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageDosen',
 						'pesan'					=>	''
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "AK":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Akuntansi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "KA":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Komputerisasi Akuntansi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "KB":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Konstruksi Bangunan',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "MID":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "MK":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Mekatronik Industri & Desain / Mekatronik',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "AB":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'MO / Alat Berat',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "MO":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'MO / Mekanik Otomotif',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "RM":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Rekam Medik & Informasi Kesehatan',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "ALL":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Seluruh Prodi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "TE":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Teknik Elektronika',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "IF":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Teknik Informatika',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-			    $this->parserTemplate($element_header);
-			        break;
-
-			    case "KIM":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Teknik Kimia',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "TK":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Teknik Komputer',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "TM":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Teknik Mesin',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/manageProdi'
-				);
-				$this->parserTemplate($element_header);
-			        break;
-
-			    case "TO":
-				$element_header = array(
-				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen',
-				        'inisialisasiKodeAkun'	=>	'Teknik Otomasi',
-						'webMuatHalaman'		=>	'Pages/DashBoard/prodi/HomeDashBoard'
 				);
 				$this->parserTemplate($element_header);
 			        break;
@@ -198,7 +68,7 @@ class ManageDosen extends CI_Controller
 		{
 				$element_header = array(
 				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
-				        'webBagian'				=>	'Manage Dosen (Add)',
+				        'webBagian'				=>	'Halaman Dosen (Add)',
 				        'inisialisasiKodeAkun'	=>	'(Akademik)',
 						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/manageDosen',
 						'pesan'					=>	''
@@ -221,7 +91,7 @@ class ManageDosen extends CI_Controller
 	                $this->DosenModel->insertDosen();
 	                $element_header['pesan'] = '
 	                  <div class="alert alert-success alert-dismissible fade show" role="alert">
-	                  Data Dosen Berhasil Ditambahkan ke dalam Database
+	                  <i class="fas fa-check-circle"></i> Data Dosen Berhasil Ditambahkan ke dalam Database
 	                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	                      <span aria-hidden="true">&times;</span>
 	                    </button>
@@ -257,7 +127,7 @@ class ManageDosen extends CI_Controller
 						'id_dosen'	=> $this->input->post('idPOST'),
 						'pesan'		=>	'
 				<div class="alert alert-success alert-dismissible fade show" role="alert">
-	            	Data Dosen <b>'.$this->input->post('nama_dosenPOST').'</b> Berhasil Dihapus dari Database
+	            	<i class="fas fa-check-circle"></i> Data Dosen <b>'.$this->input->post('nama_dosenPOST').'</b> Berhasil Dihapus dari Database
 	            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 	            	<span aria-hidden="true">&times;</span>
 	            	</button>
@@ -286,7 +156,7 @@ class ManageDosen extends CI_Controller
 		        	'nidn'			=>	$this->input->post('nidnPOST'),
 							'pesan'		=>	'
 					<div class="alert alert-success alert-dismissible fade show" role="alert">
-		            	Informasi Data Dosen '.$this->input->post('nama_dosenPOST').' Berhasil Diperbarui
+		            	<i class="fas fa-check-circle"></i> Informasi Data Dosen '.$this->input->post('nama_dosenPOST').' Berhasil Diperbarui
 		            	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 		            	<span aria-hidden="true">&times;</span>
 		            	</button>
@@ -295,6 +165,22 @@ class ManageDosen extends CI_Controller
 						$this->DosenModel->updateDosen($element_header);
 						$this->parserTemplate($element_header);
 				}
+		}
+
+		public function ManageDosenSearch()
+		{
+				$element_header = array(
+				        'webJudul'				=> 	'Sistem Informasi Pengajuan Sebaran Matakuliah',
+				        'webBagian'				=>	'Halaman Pencarian Dosen',
+				        'inisialisasiKodeAkun'	=>	'Akademik',
+						'webMuatHalaman'		=>	'Pages/DashBoard/akademik/ManageDosenSearch',
+						'pesan'					=>	'',
+						'keywordData'			=>	$this->input->post('keywordPOST'),
+						'fieldTable'			=>	$this->input->post('fieldPOST')
+				);
+
+				$this->logikaPencarian($element_header);
+
 		}
 
 }

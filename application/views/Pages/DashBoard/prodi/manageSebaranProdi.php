@@ -67,7 +67,6 @@ $(document).ready(function()
 
         <div class="p-1 align-self-center col-md-12">
           <div class="card">
-            <a href="<?php echo(base_url())?>dashboard/akademik/manageSebaran" class="btn btn-dark text-white">Kembali Ke Halaman List Sebaran (Semua Prodi)</a>
             <h1 class="display-6 text-center">Halaman Sebaran Prodi <?php echo $rowProdi['nama_prodi']?></h1>
             <div class="card-block p-3">
 
